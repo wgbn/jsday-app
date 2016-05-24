@@ -1,0 +1,25 @@
+/*
+directive: jsday-app-bar
+*/
+.jsday-app-bar {
+    background-image: url(../img/jsdayback.jpg);
+    background-size: cover;
+    background-position: center center;
+
+    height: 180px;
+}
+.jsday-app-bar .voltar {
+    text-decoration: none;
+    margin: .5em;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+.jsday-app-bar .voltar img {
+    width: 100%;
+}
+
+.dia {
+    display: block;
+    text-align: center;
+}

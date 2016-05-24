@@ -1,0 +1,23 @@
+<ion-view title="Home">
+    <jsday-app-bar back="false"></jsday-app-bar>
+
+    <ion-content></ion-content>
+
+    <div class="tabs-striped tabs-color-assertive">
+        <div class="tabs" style="background-color: #ffc900;">
+            <a class="tab-item active" href="#" ng-repeat="dia in dias" ng-click="palestraClick(dia)">
+                <!--<i class="dia">DIA</i>-->
+                {{ parseDateToStr(dia.data) }}
+            </a>
+            <!--<a class="tab-item" href="/#/palestra">
+                <i>DIA</i>
+                03/06
+            </a>
+            <a class="tab-item" href="#">
+                <i>DIA</i>
+                04/06
+            </a>-->
+        </div>
+    </div>
+
+</ion-view>
