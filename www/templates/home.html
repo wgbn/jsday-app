@@ -1,23 +1,22 @@
 <ion-view title="Home">
     <jsday-app-bar back="false"></jsday-app-bar>
 
-    <ion-content></ion-content>
+    <ion-content class="area-com-barra">
 
-    <div class="tabs-striped tabs-color-assertive">
-        <div class="tabs" style="background-color: #ffc900;">
-            <a class="tab-item active" href="#" ng-repeat="dia in dias" ng-click="palestraClick(dia)">
-                <!--<i class="dia">DIA</i>-->
-                {{ parseDateToStr(dia.data) }}
-            </a>
-            <!--<a class="tab-item" href="/#/palestra">
-                <i>DIA</i>
-                03/06
-            </a>
-            <a class="tab-item" href="#">
-                <i>DIA</i>
-                04/06
-            </a>-->
-        </div>
-    </div>
+        <jsday-palestras ng-repeat="palestra in palestras" palestra="palestra"></jsday-palestras>
+
+    </ion-content>
+
+    <!--<ion-tabs class="tabs-energized abas">
+
+        <ion-tab title="DIA {{ parseDateToStr(dia.data) }}" ng-repeat="dia in dias">
+            <jsday-app-bar back="false"></jsday-app-bar>
+            <ion-content class="aba">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem corporis culpa cupiditate dicta dignissimos ducimus est, ex illum ipsum libero minima, natus optio possimus, provident quas qui tenetur velit?</p>
+                <jsday-palestras></jsday-palestras>
+            </ion-content>
+        </ion-tab>
+
+    </ion-tabs>-->
 
 </ion-view>

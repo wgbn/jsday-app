@@ -27,6 +27,12 @@ angular.module('jsday')
                             +":"
                             +result.getMinutes().toString() : "");
                     },
+                    parseTimeToStr: function (_date) {
+                        var result = new Date(_date);
+                        return (result.getHours() < 10 ? '0' + result.getHours() : result.getHours())
+                            +":"
+                            +(result.getMinutes() < 10 ? '0' + result.getMinutes() : result.getMinutes());
+                    },
                     parseShortDateToStr: function(_date){
                         var result = new Date(_date);
                         return (result.getDate() < 10 ? "0"+result.getDate() : result.getDate())

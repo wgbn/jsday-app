@@ -27,8 +27,10 @@ angular.module('jsday', ['ionic', 'firebase'])
         ]
     )
     .config(
-        ['$stateProvider', '$urlRouterProvider',
-            function ($stateProvider, $urlRouterProvider) {
+        ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
+            function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+                $ionicConfigProvider.tabs.position('bottom');
+
                 $stateProvider
                     .state('home', {
                         url: '/',
@@ -36,10 +38,10 @@ angular.module('jsday', ['ionic', 'firebase'])
                         controller: 'HomeCtrl'
                     })
                     .state('palestra', {
-                        url: '/palestra',
-                        templateUrl: 'templates/palestra.html',
+                        url: '/palestra/:key',
+                        templateUrl: "templates/palestra.html",
                         controller: 'PalestraCtrl'
-                    });
+                    })
                 $urlRouterProvider.otherwise('/')
             }
         ]

@@ -11,8 +11,8 @@ angular.module('jsday')
     .controller('HomeCtrl',
         ['$scope', 'fireService', 'Utils',
             function ($scope, fireService, Utils) {
-                //fireService.setTeste();
-                $scope.dias = fireService.getDias();
+                //fireService.setTestePalestra();
+                $scope.palestras = fireService.getPalestras();
 
                 $scope.parseDateToStr = function (_data) {
                     return Utils.parseShortDateToStr(_data);
@@ -22,10 +22,11 @@ angular.module('jsday')
     )
 
     .controller('PalestraCtrl',
-        ['$scope', 'fireService', 'Utils',
-            function ($scope, fireService, Utils) {
+        ['$scope', '$state', '$stateParams', 'fireService', 'Utils',
+            function ($scope, $state, $stateParams, fireService, Utils) {
+                console.log($stateParams.key);
                 $scope.btnVoltar = function(){
-                    alert('voltar');
+                    $state.go('home');
                 };
             }
         ]

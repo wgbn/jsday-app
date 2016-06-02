@@ -5,28 +5,28 @@ angular.module('jsday')
         ['$firebaseArray', 'Utils',
             function ($firebaseArray, Utils) {
                 var db = new Firebase("https://jsday-app.firebaseio.com"); //.orderByChild('event_start').startAt(new Date().getTime());
-                var sync = $firebaseArray(db.child('dias'));
+                var sync = $firebaseArray(db.child('palestras'));
 
                 return {
-                    getDias: function (){
+                    getPalestras: function () {
                         return sync;
                     },
-                    addDia: function (_dia){
-                        sync.$add(_dia);
+                    addPalestra: function (_palestra) {
+                        sync.$add(_palestra);
                     },
-                    updateDia: function (_dia) {
+                    updatePalestra: function (_palestra) {
                         _dia.agenda.push({
                             hora: Utils.parseStrToDate("20/06/2016 12:00"),
                             nome: "Almoço",
                             servico: true
                         });
-                        sync.$save(_dia);
+                        sync.$save(_palestra);
                         //db.child('dias').child(_dia.$id).set(_dia);
                         //console.info(_dia.$id);
                     },
-                    setTeste: function () {
+                    setTesteDia: function () {
                         var _dia = {
-                            data: Utils.parseStrToDate("20/06/2016"),
+                            data: Utils.parseStrToDate("21/06/2016"),
                             local: "Feira de Santana",
                             agenda: [
                                 {
@@ -57,6 +57,36 @@ angular.module('jsday')
                             ]
                         };
                         this.addDia(_dia);
+                    },
+                    setTestePalestra: function () {
+                        var _p = {
+                            hora: Utils.parseStrToDate("20/06/2016 10:00", true),
+                            nome: "Cofee Break",
+                            servico: true
+                        };
+                        this.addPalestra(_p);
+
+                        _p = {
+                            hora: Utils.parseStrToDate("20/06/2016 10:30", true),
+                            nome: "Joomla",
+                            descricao: "lorem ipsum amet",
+                            capa: "https://media.licdn.com/media/p/3/000/1b3/075/2b81fd9.png",
+                            slide: "http://endereco-do-slide",
+                            autor: {
+                                nome: "Walter Gandarella",
+                                email: "walter.wgbn@gmail.com",
+                                avatar: "http://www.avatarpro.biz/avatar?s=100",
+                                github: "http://github.com/wgbn",
+                                twitter: "https://twitter.com/jebinha",
+                                site: "http://wgbn.com.br",
+                                bio: "lorem ipsum amet"
+                            },
+                            avaliacao: [
+                                0
+                            ],
+                            comentarios: []
+                        };
+                        this.addPalestra(_p);
                     },
                 };
             }
