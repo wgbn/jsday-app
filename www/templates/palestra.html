@@ -1,3 +1,61 @@
 <ion-view title="Palestra">
     <jsday-app-bar back="true" acao="btnVoltar()"></jsday-app-bar>
+
+    <ion-tabs class="tabs-energized abas">
+
+        <ion-tab title="Palestra">
+            <ion-content class="area-com-barra padding">
+
+                <div class="autor list">
+                    <div class="linha">
+                        <span class="avatar" style="background-image: url({{palestra.autor.avatar}});"></span>
+                        <div class="dados">
+                            <strong>{{palestra.autor.nome}}</strong>
+                            <div class="bio">{{palestra.autor.bio}}</div>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="redes">
+                            <a ng-repeat="rede in palestra.autor.redes" href="{{rede.valor}}" target="_blank"><i class="icon ion-{{rede.tipo}}"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sessao-palestra">
+                    <h3>{{palestra.nome}}</h3>
+
+                    <img src="{{palestra.capa}}" alt="{{palestra.nome}}" class="capa">
+
+                    <p class="descricao padding">{{palestra.descricao}}</p>
+                </div>
+
+                <div class="sessao-rating">
+                    <span class="rate">Avalie esta Palestra</span>
+                    <rating ng-model="rate.avaliacao" max="rate.max" ng-click="rateClick()"></rating>
+                </div>
+
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Notas">
+            <ion-content class="area-com-barra padding">
+
+                <jsday-nova-nota palestra="key"></jsday-nova-nota>
+
+                <div class="card padding nota" ng-repeat="nota in notas">
+                    {{nota.text}}
+                </div>
+
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab title="Comentários">
+            <ion-content class="area-com-barra">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
+            </ion-content>
+        </ion-tab>
+
+    </ion-tabs>
 </ion-view>

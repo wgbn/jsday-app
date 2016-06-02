@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CodeNewRoman';
+    src: url('fonts/CodeNewRoman.eot');
+    src: url('fonts/CodeNewRoman.eot') format('embedded-opentype'),
+         url('fonts/CodeNewRoman.woff2') format('woff2'),
+         url('fonts/CodeNewRoman.woff') format('woff'),
+         url('fonts/CodeNewRoman.ttf') format('truetype'),
+         url('fonts/CodeNewRoman.svg#CodeNewRoman') format('svg');
+}

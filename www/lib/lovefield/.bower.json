@@ -1,0 +1,42 @@
+{
+  "name": "lovefield",
+  "homepage": "https://github.com/google/lovefield",
+  "authors": [
+    "Google Inc."
+  ],
+  "private": true,
+  "description": "Lovefield - A relational database for web apps",
+  "main": "dist/lovefield.min.js",
+  "keywords": [
+    "lovefield"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "builddef",
+    "codelabs",
+    "demos",
+    "docs",
+    "examples",
+    "gulpfile.js",
+    "lib",
+    "perf",
+    "spac",
+    "testing",
+    "tests",
+    "tools"
+  ],
+  "version": "2.1.8",
+  "_release": "2.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.8",
+    "commit": "aab3e61769a82fb74b887f10b308d4869e47b062"
+  },
+  "_source": "https://github.com/google/lovefield.git",
+  "_target": "^2.1.8",
+  "_originalSource": "lovefield",
+  "_direct": true
+}

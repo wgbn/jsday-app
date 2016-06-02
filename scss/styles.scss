@@ -1,74 +1,169 @@
 @import "ionic.app";
+@import "flex";
+@import "css3-mixins";
 
 /*
-directive: jsday-app-bar
+* importa directives
 */
-.jsday-app-bar {
-    background-image: url(../img/jsdayback.jpg);
-    background-size: cover;
+@import "directives/jsday-app-bar";
+@import "directives/jsday-palestras";
+@import "directives/jsday-nova-nota";
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+* Mixins
+*/
+%flex-center-center {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+%flex-center-left {
+    @include flexbox;
+    @include justify-content(flex-start);
+    @include align-items(center);
+}
+
+%flex-center-right {
+    @include flexbox;
+    @include justify-content(flex-end);
+    @include align-items(center);
+}
+
+%flex-center-bottom {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(flex-end);
+}
+
+%flex-center-top {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(flex-start);
+}
+
+%cover {
     background-position: center center;
-
-    height: 180px;
-    z-index: 9999;
-
-    & .voltar {
-        text-decoration: none;
-        margin: .5em;
-        width: 25px;
-        height: 25px;
-        display: inline-block;
-
-        & img {
-            width: 100%;
-        }
-    }
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*
-directive: jsday-palestras
+* demais styles
 */
-.jsday-palestras {
-    & strong {
-        font-size: 1.2em;
-        color: #666;
-    }
-
-    & .servico-titulo, & .servico-hora {
-        display: block;
-        text-align: center;
-    }
-    & .servico-titulo {
-        color: #666;
-        font: {
-            size: 1.1em;
-            weight: bold;
-        }
-    }
-    & .servico-hora {
-        color: #FF9800;
-    }
-
-    & .palestra-hora {
-        color: #FF9800;
-        font-size: 1.1em;
-    }
-}
-
-.dia {
-    display: block;
-    text-align: center;
-}
 
 .abas {
     & .tab-title {
         color: $assertive;
     }
-    & .aba {
-        padding: 180px .5em .5em;
+    & .tab-item-active {
+        border-color: $assertive !important;
     }
 }
 
 .area-com-barra {
-    margin-top: 181px;
+    margin-top: 180px;
     padding: .5em;
+    //background-color: rgba(255, 201, 0, .1);
+    background-color: #f5f5f5;
+}
+
+.autor {
+    & .linha {
+        @extend %flex-center-left;
+        @include align-items(flex-start);
+    }
+
+    & .avatar {
+        @extend %cover;
+        width: 84px;
+        height: 84px;
+    }
+
+    & .dados {
+        @include flex-grow(1);
+        padding: .5em;
+        width: 70%;
+
+        & strong {
+            display: block;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        & .bio {
+            white-space: normal;
+            font-size: .8em;
+            line-height: normal;
+            color: #666;
+        }
+    }
+
+    & .redes {
+        @extend %flex-center-left;
+
+        & a {
+            text: {
+                decoration: none;
+            }
+            display: inline-block;
+            padding: .3em .6em;
+            background-color: #999;
+            color: #fff;
+            margin: .2em;
+            font-size: 1em;
+
+            @include border-radius(3px);
+        }
+    }
+}
+
+.sessao-palestra {
+    margin: 1em 0;
+    padding: 1em 0;
+    border-top: 1px solid #ccc;
+
+    & h3 {
+        text-align: center;
+        line-height: normal;
+        color: #333;
+        font-size: 1.4em;
+        font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+        margin-bottom: 1em;
+    }
+
+    & .capa {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    & .descricao {
+        font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+        font-size: 1.05em;
+        text-align: justify;
+        color: #666;
+        line-height: normal;
+    }
+}
+
+.sessao-rating {
+    border-top: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+
+    & span.rate {
+        display: block;
+        color: #666;
+    }
+}
+
+.nota {
+    background-color: #FFF8E1;
+    color: #666;
+    font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
 }

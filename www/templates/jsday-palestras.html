@@ -1,16 +1,18 @@
 <div class="list card jsday-palestras" ng-click="palestraClick()">
 
-    <div class="item item-avatar" ng-hide="palestra.servico">
-        <img src="{{palestra.autor.avatar}}">
-        <h2>{{palestra.autor.nome}}</h2>
-        <p class="palestra-hora"><i class="ion-ios-clock-outline"></i> {{palestra.hora}}</p>
-    </div>
-
-    <div class="item item-body" ng-hide="palestra.servico">
-        <img class="full-image" src="{{palestra.capa}}">
-        <p style="text-align: center">
+    <div class="item item-body palestra-titulo" ng-hide="palestra.servico">
+        <p>
             <strong>{{palestra.nome}}</strong>
         </p>
+        <img class="full-image" src="{{palestra.capa}}">
+    </div>
+
+    <div class="item palestra-header" ng-hide="palestra.servico">
+        <strong class="avatar" style="background-image: url({{palestra.autor.avatar}});"></strong>
+        <div class="dados">
+            <strong>{{palestra.autor.nome}}</strong>
+            <em class="palestra-hora"><i class="ion-ios-clock-outline"></i> {{palestra.hora}}</em>
+        </div>
     </div>
 
     <div class="item" ng-show="palestra.servico">

@@ -5,16 +5,46 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var del = require('del');
 var sh = require('shelljs');
 
 var paths = {
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['watch']);
+
+gulp.task('js-controller', function() {
+    return gulp.src('www/js/controllers/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('controllers.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('www/js'));
+});
+
+gulp.task('js-directive', function() {
+    return gulp.src('www/js/directives/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('directives.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('www/js'));
+});
+
+gulp.task('js-service', function() {
+    return gulp.src('www/js/services/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('services.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('www/js'));
+});
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/*.scss')
+  gulp.src('./scss/styles.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
@@ -28,6 +58,9 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch('www/js/controllers/*.js', ['js-controller']);
+  gulp.watch('www/js/directives/*.js', ['js-directive']);
+  gulp.watch('www/js/services/*.js', ['js-service']);
 });
 
 gulp.task('install', ['git-check'], function() {

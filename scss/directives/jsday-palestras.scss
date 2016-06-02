@@ -1,0 +1,65 @@
+/*
+directive: jsday-palestras
+*/
+.jsday-palestras {
+    & strong {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: #666;
+        font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+    }
+
+    & .servico-titulo, & .servico-hora {
+        display: block;
+        text-align: center;
+        font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+    }
+    & .servico-titulo {
+        color: #666;
+        font: {
+            size: 1.1em;
+            weight: normal;
+        }
+    }
+    & .servico-hora {
+        color: #FF9800;
+    }
+
+    & .item-body {
+        padding: 0 !important;
+    }
+
+    & .palestra-header {
+        @extend %flex-center-left;
+        & .avatar {
+            @extend %cover;
+            @include border-radius(50%);
+            width: 45px;
+            height: 45px;
+        }
+        & .dados {
+            @include flex-grow(1);
+            padding-left: .5em;
+
+            & strong, & em {
+                display: block;
+            }
+            & .palestra-hora {
+                color: #FF9800;
+                font-size: 1.1em;
+                font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+            }
+        }
+    }
+
+    & .palestra-titulo {
+        text-align: center;
+        & p {
+            margin: 0;
+            padding: .5em;
+        }
+    }
+}
+.jsday-palestras:last-child {
+    margin-bottom: .3em !important;
+}
