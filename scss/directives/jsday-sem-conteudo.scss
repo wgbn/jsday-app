@@ -1,0 +1,14 @@
+.jsday-sem-conteudo {
+    @extend %flex-center-center;
+
+    & .centro {
+        display: inline-block;
+        text-align: center;
+
+        & .legenda {
+            padding: .5em 0;
+            display: block;
+            color: #999;
+        }
+    }
+}

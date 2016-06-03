@@ -1,6 +1,12 @@
 (function(){
     'use strict';
 
+    /**
+     * @description Módulo principal do app
+     * @author Walter Gandarella <walter.wgbn@gmail.com>
+     * @memberof jsday
+     * @version 1.0.0
+     */
     angular
         .module('jsday', ['ionic', 'firebase', 'ionic.rating', 'ionic-toast'])
         .constant('TABLE', {
@@ -12,6 +18,14 @@
     jsdayRun.$inject = ['$ionicPlatform', 'dbService'];
     jsdayConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider'];
 
+    /**
+     * @memberof jsday
+     * @ngdoc config
+     * @name jsdayConfig
+     * @param $stateProvider {provider}
+     * @param $urlRouterProvider {provider}
+     * @param $ionicConfigProvider {provider}
+     */
     function jsdayConfig($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         $ionicConfigProvider.tabs.position('bottom');
 
@@ -29,6 +43,13 @@
         $urlRouterProvider.otherwise('/')
     }
 
+    /**
+     * @memberof jsday
+     * @ngdoc run
+     * @name jsdayRun
+     * @param $ionicPlatform {provider}
+     * @param dbService {service}
+     */
     function jsdayRun($ionicPlatform, dbService) {
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {

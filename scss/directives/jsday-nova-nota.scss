@@ -11,6 +11,7 @@ directive: jsday-nova-nota
         resize: none;
         height: 32px;
         font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+        font-size: 1.2em;
 
         -webkit-transition: height .2s;
         -moz-transition: height .2s;
@@ -38,7 +39,7 @@ directive: jsday-nova-nota
             background-color: $assertive;
             color: #fff;
             text-transform: uppercase;
-            font-size: .8em;
+            font-size: .9em;
             padding: .5em .9em;
         }
     }

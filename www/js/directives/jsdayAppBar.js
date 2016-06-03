@@ -1,30 +1,66 @@
-/**
-* @doc
-* @example <jsday-app-bar back="true|false" acao="function"></jsday-app-bar>
-*/
-angular
-    .module('jsday')
-    .directive('jsdayAppBar', jsdayAppBar);
+(function(){
+    "use strict";
 
-function jsdayAppBar () {
-    var directive = {
-        restrict: 'E',
-        templateUrl: 'templates/jsday-app-bar.html',
-        scope: {
-            back: '=',
-            acao: '&'
-        },
-        controller: appBarCtrl
-    };
+    /**
+     * @description Directiva para a barra de titulo do app
+     * @author Walter Gandarella <walter.wgbn@gmail.com>
+     * @memberof jsday
+     * @version 1.0.0
+     */
+    angular
+        .module('jsday')
+        .directive('jsdayAppBar', jsdayAppBar);
 
-    return directive;
-}
+    /**
+     * @memberof jsday
+     * @ngdoc directive
+     * @scope {}
+     * @restrict E
+     * @name jsdayAppBar
+     * @description
+     *   Exibe uma barra comum que pode ou não contar um botão voltar
+     *
+     * @attr {Boolean} back Flag que ativa ou não o botão voltar [true|false]
+     * @attr {Expression} acao Função que será executada ao clicar no botão voltar
+     *
+     * @example
+     *   Usage:
+     *   <jsday-app-bar back="false"></jsday-app-bar>
+     *
+     *   <jsday-app-bar back="true" acao="func()"></jsday-app-bar>
+     */
+    function jsdayAppBar () {
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'templates/jsday-app-bar.html',
+            scope: {
+                back: '=',
+                acao: '&'
+            },
+            controller: appBarCtrl
+        };
 
-appBarCtrl.$inject = ['$scope'];
+        return directive;
+    }
 
-function appBarCtrl ($scope) {
-    $scope.back = $scope.back || false;
-    $scope.voltarClick = function () {
-        $scope.acao();
-    };
-}
+    appBarCtrl.$inject = ['$scope'];
+
+    /**
+     * Lógica da diretiva jsdayAppBar
+     * @memberof jsdayAppBar
+     * @param {service} $scope  Escopo do controller
+     */
+    function appBarCtrl ($scope) {
+        $scope.back = $scope.back || false;
+        $scope.voltarClick = _voltarClick;
+
+        /**
+         * Função que captura o clique no botão voltar e delega para a função passada no escopo
+         * @memberof jsdayAppBar
+         * @function _voltarClick
+         */
+        function _voltarClick () {
+            $scope.acao();
+        }
+    }
+})();

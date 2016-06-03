@@ -42,6 +42,8 @@
 
                 <jsday-nova-nota palestra="key"></jsday-nova-nota>
 
+                <jsday-sem-conteudo conteudo="nota" ng-hide="notas.length"></jsday-sem-conteudo>
+
                 <div class="card padding nota" ng-repeat="nota in notas">
                     {{nota.text}}
                 </div>
@@ -51,9 +53,9 @@
 
         <ion-tab title="Comentários">
             <ion-content class="area-com-barra">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolores eligendi expedita impedit incidunt libero omnis ratione totam veritatis. Dolorem, esse est fugiat labore officiis perferendis repellendus temporibus veritatis!
+
+                <jsday-sem-conteudo conteudo="comentario" ng-hide="comentarios.length"></jsday-sem-conteudo>
+
             </ion-content>
         </ion-tab>
 
