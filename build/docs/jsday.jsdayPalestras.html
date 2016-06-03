@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSDoc: jsdayPalestras</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+      <ul class="module">
+        <!-- jsday -->
+        <h3>
+          <a href="" ng-click="modulejsday = !modulejsday">
+            module: jsday
+          </a>
+          <i ng-cloak="" ng-show="modulejsday">+</i>
+        </h3>
+        <li id="jsday" ng-hide="modulejsday">
+          <ul class="group">
+            <h3>
+              <a href="" ng-click="jsdayfactory = !jsdayfactory">
+                factory
+              </a>
+              <i ng-cloak="" ng-show="jsdayfactory">+</i>
+            </h3>
+            <ul ng-hide="jsdayfactory">
+              <li>
+                <a href="jsday.fireService.html">fireService</a>
+              </li><li>
+                <a href="jsday.Utils.html">Utils</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaycontroller = !jsdaycontroller">
+                controller
+              </a>
+              <i ng-cloak="" ng-show="jsdaycontroller">+</i>
+            </h3>
+            <ul ng-hide="jsdaycontroller">
+              <li>
+                <a href="jsday.HomeCtrl.html">HomeCtrl</a>
+              </li><li>
+                <a href="jsday.PalestraCtrl.html">PalestraCtrl</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaydirective = !jsdaydirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="jsdaydirective">+</i>
+            </h3>
+            <ul ng-hide="jsdaydirective">
+              <li>
+                <a href="jsday.jsdayAppBar.html">jsdayAppBar</a>
+              </li><li>
+                <a href="jsday.jsdayPalestras.html">jsdayPalestras</a>
+              </li><li>
+                <a href="jsday.jsdaySemConteudo.html">jsdaySemConteudo</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h3 style="float:right; color:#ccc">
+        Angular directive
+      </h3>
+      <h1 class="title">
+        jsdayPalestras
+        <a class="name-link signature-attributes" href="source/jsday.jsdayPalestras.html#line14">source</a>
+        <a class="name-link signature-attributes" href="templates/templates_jsday-palestras.html">template</a>
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <!-- class files -->
+        <div>
+          <div><div class="container-overview">  <ul class="chips">    <li class="chip">Isolated Scope</li>    <li class="chip">Element</li>  </ul>  <div class="clearfix"></div>  <div class="description">    <p>Exibe uma palestra na timeline do evento</p>  </div>  <div class="details"></div>  <div>    <h5>Attributes</h5>    <table class="params">      <thead>        <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>      </thead>      <tbody>        <tr>          <td class="name" nowrap="">palestra</td>          <td class="type"><span class="param-type">            Object          </span></td>          <td class="description last">            <span>              <p>O objeto que representa a palestra a ser exibida</p>
+            </span>          </td>        </tr>      </tbody>    </table>  </div>  <div>    <h5>Example</h5>    <pre class="prettyprint"><code><span class="str">Usage:
+  &lt;jsday-palestras palestra="palestra">&lt;/jsday-palestras></span></code></pre>  </div></div><div class="functions">  <h3 class="subsection-title">Methods</h3>  <dl>    <dt>      <a href="source/jsday.jsdayPalestras.html#line55" class="name-link" id="_palestraClick">        <h4 class="name">          _palestraClick        </h4>      </a>    </dt>    <dd>      <div class="description">        <span>          <p>Função que captura o clique na palestra e exibe a página de detalhes da mesma</p>        </span>      </div>    </dd>  </dl><dl>    <dt>      <a href="source/jsday.jsdayPalestras.html#line49" class="name-link" id="ctrlPalestras">        <h4 class="name">          ctrlPalestras          <span class="signature">($scope)</span>        </h4>      </a>    </dt>    <dd>      <div class="description">        <span>          <p>Lógica da diretiva jsdayPalestras</p>        </span>      </div>      <div>        <h5>Parameters</h5>        <table class="params">          <thead>            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>          </thead>          <tbody>            <tr>              <td class="name">$scope</td>              <td class="type"><span class="param-type">                <a href="service.html">service</a>              </span></td>              <td class="description last">                <span>                  <p>Escopo do controller</p>                </span>              </td>            </tr>          </tbody>        </table>      </div>    </dd>  </dl></div></div>
+        </div>
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

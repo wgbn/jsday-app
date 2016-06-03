@@ -33,7 +33,7 @@
             restrict: 'E',
             templateUrl: 'templates/jsday-sem-conteudo.html',
             scope: {
-                conteudo: '='
+                conteudo: '@'
             },
             link: linkSemConteudo,
             controller: ctrlSemConteudo
@@ -50,7 +50,7 @@
          * @param {controller} vm map controller
          */
         function linkSemConteudo (scope, el, attr, vm) {
-            var altura = $(window).height() - 49 - 140 - (scope.conteudo == 'nota' ? 66 : 0);
+            var altura = $(window).height() - 55 - 140 - (scope.conteudo == 'nota' ? 75 : 0);
             $('.jsday-sem-conteudo').height(altura);
         }
     }

@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <base href="../">
+    <title>JSDoc: source : palestraController.js</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+      <ul class="module">
+        <!-- jsday -->
+        <h3>
+          <a href="" ng-click="modulejsday = !modulejsday">
+            module: jsday
+          </a>
+          <i ng-cloak="" ng-show="modulejsday">+</i>
+        </h3>
+        <li id="jsday" ng-hide="modulejsday">
+          <ul class="group">
+            <h3>
+              <a href="" ng-click="jsdayfactory = !jsdayfactory">
+                factory
+              </a>
+              <i ng-cloak="" ng-show="jsdayfactory">+</i>
+            </h3>
+            <ul ng-hide="jsdayfactory">
+              <li>
+                <a href="jsday.fireService.html">fireService</a>
+              </li><li>
+                <a href="jsday.Utils.html">Utils</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaycontroller = !jsdaycontroller">
+                controller
+              </a>
+              <i ng-cloak="" ng-show="jsdaycontroller">+</i>
+            </h3>
+            <ul ng-hide="jsdaycontroller">
+              <li>
+                <a href="jsday.HomeCtrl.html">HomeCtrl</a>
+              </li><li>
+                <a href="jsday.PalestraCtrl.html">PalestraCtrl</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaydirective = !jsdaydirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="jsdaydirective">+</i>
+            </h3>
+            <ul ng-hide="jsdaydirective">
+              <li>
+                <a href="jsday.jsdayAppBar.html">jsdayAppBar</a>
+              </li><li>
+                <a href="jsday.jsdayPalestras.html">jsdayPalestras</a>
+              </li><li>
+                <a href="jsday.jsdaySemConteudo.html">jsdaySemConteudo</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h1 class="title">
+        source : palestraController.js
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <article>
+          <pre class="prettyprint source linenums"><code>(function(){
+    "use strict";
+    /**
+     * @description Controller Palestra
+     * @author Walter Gandarella &lt;walter.wgbn@gmail.com>
+     * @memberof jsday
+     * @version 1.0.0
+     */
+    angular
+        .module('jsday')
+        .controller('PalestraCtrl', PalestraCtrl);
+    PalestraCtrl.$inject = ['$scope', '$state', '$stateParams', 'fireService', 'Utils', 'ionicToast', 'noteService'];
+    /**
+     * @memberof jsday
+     * @ngdoc controller
+     * @name PalestraCtrl
+     * @param $scope {service}          Controller scope
+     * @param $state {provider}         State provider
+     * @param $stateParams {provider}   State params
+     * @param fireService {factory}     Firebase service
+     * @param Utils {factory}           Funções utilitárias
+     * @param ionicToast {provider}     Toast provider
+     * @param noteService {service}     Serviço de persistencia de notas
+     */
+    function PalestraCtrl($scope, $state, $stateParams, fireService, Utils, ionicToast, noteService) {
+        $scope.key = $stateParams.key;
+        $scope.palestra = fireService.getPalestra($stateParams.key);
+        $scope.rate = {};
+        $scope.rate.avaliacao = Utils.getLocalStorage($stateParams.key) ? Utils.getLocalStorage($stateParams.key) : 0;
+        $scope.rate.max = 5;
+        $scope.notas = [];
+        $scope.rateClick = _rateClick;
+        $scope.btnVoltar = _btnVoltar;
+        $scope.$on('notaAdded', _notaAdded);
+        _getNotas();
+        ///////////////////////
+        /**
+         * Função que captura o clique na diretiva de avaliação e salva o voto do usuário
+         * @memberof PalestraCtrl
+         * @function _rateClick
+         * @private
+         */
+        function _rateClick () {
+            if (!Utils.getLocalStorage($stateParams.key)) {
+                $scope.palestra.avaliacao += $scope.rate.avaliacao;
+                fireService.updatePalestra($scope.palestra, 'avaliacao');
+                Utils.setLocalStorage($stateParams.key, $scope.rate.avaliacao);
+            } else {
+                $scope.rate.avaliacao = Utils.getLocalStorage($stateParams.key);
+                ionicToast.show('Você já avaliou esta palestra.', 'bottom', false, 2500);
+            }
+        }
+        /**
+         * Função que captura o botão voltar e direciona para tela Home
+         * @memberof PalestraCtrl
+         * @function _btnVoltar
+         * @private
+         */
+        function _btnVoltar () {
+            $state.go('home');
+        }
+        /**
+         * Função que escuta o evento notaAdded e atualiza as notas na tela
+         * @memberof PalestraCtrl
+         * @function _notaAdded
+         * @param {Object} e        Event object
+         * @param {Object} data     Data result object
+         * @private
+         */
+        function _notaAdded (e, data) {
+            if (data.palestra == $scope.key)
+                _getNotas();
+        }
+        /**
+         * Função que consulta o service de Notas e atualiza a lista de notas
+         * @memberof PalestraCtrl
+         * @function getNotas
+         * @private
+         */
+        function _getNotas() {
+            noteService.getByPalestra($scope.key).then(function(results) {
+                $scope.notas = results;
+            });
+        }
+    }
+})();
+</code></pre>
+        </article>
+        <!-- index.html -->
+        <!-- class files -->
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

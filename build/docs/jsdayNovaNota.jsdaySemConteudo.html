@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSDoc: jsdaySemConteudo</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+      <ul class="module">
+        <!-- jsday -->
+        <h3>
+          <a href="" ng-click="modulejsday = !modulejsday">
+            module: jsday
+          </a>
+          <i ng-cloak="" ng-show="modulejsday">+</i>
+        </h3>
+        <li id="jsday" ng-hide="modulejsday">
+          <ul class="group">
+            <h3>
+              <a href="" ng-click="jsdayfactory = !jsdayfactory">
+                factory
+              </a>
+              <i ng-cloak="" ng-show="jsdayfactory">+</i>
+            </h3>
+            <ul ng-hide="jsdayfactory">
+              <li>
+                <a href="jsday.fireService.html">fireService</a>
+              </li><li>
+                <a href="jsday.Utils.html">Utils</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaycontroller = !jsdaycontroller">
+                controller
+              </a>
+              <i ng-cloak="" ng-show="jsdaycontroller">+</i>
+            </h3>
+            <ul ng-hide="jsdaycontroller">
+              <li>
+                <a href="jsday.HomeCtrl.html">HomeCtrl</a>
+              </li><li>
+                <a href="jsday.PalestraCtrl.html">PalestraCtrl</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" ng-click="jsdaydirective = !jsdaydirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="jsdaydirective">+</i>
+            </h3>
+            <ul ng-hide="jsdaydirective">
+              <li>
+                <a href="jsday.jsdayAppBar.html">jsdayAppBar</a>
+              </li><li>
+                <a href="jsday.jsdayPalestras.html">jsdayPalestras</a>
+              </li><li>
+                <a href="jsday.jsdaySemConteudo.html">jsdaySemConteudo</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- jsday_ova_ota -->
+        <h3>
+          <a href="" ng-click="modulejsday_ova_ota = !modulejsday_ova_ota">
+            module: jsdayNovaNota
+          </a>
+          <i ng-cloak="" ng-show="modulejsday_ova_ota">+</i>
+        </h3>
+        <li id="jsdayNovaNota" ng-hide="modulejsday_ova_ota">
+          <ul class="group">
+            <h3>
+              <a href="" ng-click="jsday_ova_otadirective = !jsday_ova_otadirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="jsday_ova_otadirective">+</i>
+            </h3>
+            <ul ng-hide="jsday_ova_otadirective">
+              <li>
+                <a href="jsdayNovaNota.jsdaySemConteudo.html">jsdaySemConteudo</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h3 style="float:right; color:#ccc">
+        Angular directive
+      </h3>
+      <h1 class="title">
+        jsdaySemConteudo
+        <a class="name-link signature-attributes" href="source/jsdayNovaNota.jsdaySemConteudo.html#line14">source</a>
+        <a class="name-link signature-attributes" href="templates/templates_jsday-nova-nota.html">template</a>
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <!-- class files -->
+        <div>
+          <div><div class="container-overview">  <ul class="chips">    <li class="chip">Isolated Scope</li>    <li class="chip">Element</li>  </ul>  <div class="clearfix"></div>  <div class="description">    <p>Exibe uma caixa onde o usuário pode criar uma nova nota</p>  </div>  <div class="details"></div>  <div>    <h5>Attributes</h5>    <table class="params">      <thead>        <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>      </thead>      <tbody>        <tr>          <td class="name" nowrap="">palestra</td>          <td class="type"><span class="param-type">            String          </span></td>          <td class="description last">            <span>              <p>A chave (key) da palestra a que a nota pertence</p>
+            </span>          </td>        </tr>      </tbody>    </table>  </div>  <div>    <h5>Example</h5>    <pre class="prettyprint"><code><span class="str">Usage:
+  &lt;jsday-nova-nota palestra="key">&lt;/jsday-nova-nota></span></code></pre>  </div></div><div class="functions">  <h3 class="subsection-title">Methods</h3>  <dl>    <dt>      <a href="source/jsdayNovaNota.jsdaySemConteudo.html#line65" class="name-link" id="ctrlSemConteudo">        <h4 class="name">          ctrlSemConteudo          <span class="signature">($scope)</span>        </h4>      </a>    </dt>    <dd>      <div class="description">        <span>          <p>Lógica da diretiva jsdaySemConteudo</p>        </span>      </div>      <div>        <h5>Parameters</h5>        <table class="params">          <thead>            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>          </thead>          <tbody>            <tr>              <td class="name">$scope</td>              <td class="type"><span class="param-type">                <a href="service.html">service</a>              </span></td>              <td class="description last">                <span>                  <p>Escopo do controller</p>                </span>              </td>            </tr>          </tbody>        </table>      </div>    </dd>  </dl><dl>    <dt>      <a href="source/jsdayNovaNota.jsdaySemConteudo.html#line52" class="name-link" id="linkSemConteudo">        <h4 class="name">          linkSemConteudo          <span class="signature">(scope, el, attr, vm)</span>        </h4>      </a>    </dt>    <dd>      <div class="description">        <span>          <p>Inicializa a diretiva para manipular o DOM</p>        </span>      </div>      <div>        <h5>Parameters</h5>        <table class="params">          <thead>            <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>          </thead>          <tbody>            <tr>              <td class="name">scope</td>              <td class="type"><span class="param-type">                <a href="service.html">service</a>              </span></td>              <td class="description last">                <span>                  <p>the scope of this element</p>                </span>              </td>            </tr><tr>              <td class="name">el</td>              <td class="type"><span class="param-type">                <a href="service.html">service</a>              </span></td>              <td class="description last">                <span>                  <p>element that this direcive is assigned to</p>                </span>              </td>            </tr><tr>              <td class="name">attr</td>              <td class="type"><span class="param-type">                <a href="service.html">service</a>              </span></td>              <td class="description last">                <span>                  <p>attribute of this element</p>                </span>              </td>            </tr><tr>              <td class="name">vm</td>              <td class="type"><span class="param-type">                <a href="controller.html">controller</a>              </span></td>              <td class="description last">                <span>                  <p>map controller</p>                </span>              </td>            </tr>          </tbody>        </table>      </div>    </dd>  </dl></div></div>
+        </div>
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

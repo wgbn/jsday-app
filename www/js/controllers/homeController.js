@@ -22,9 +22,9 @@
      * @param Utils {factory}           Funções utilitárias
      */
     function HomeCtrl($scope, fireService, Utils) {
-        //fireService.setTestePalestra();
-        $scope.palestras = _carregaPalestras;
         $scope.parseDateToStr = _parseDateToStr;
+
+        _carregaPalestras();
 
         ///////////////////////
 
@@ -47,7 +47,7 @@
          * @returns {Promise}           Promise da lista de palestras
          */
         function _carregaPalestras () {
-            return fireService.getPalestras();
+            $scope.palestras = fireService.getPalestras();
         }
     }
 })();
