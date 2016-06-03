@@ -12,7 +12,7 @@
         .directive('jsdayNovaNota', jsdayNovaNota);
 
     /**
-     * @memberof jsdayNovaNota
+     * @memberof jsday
      * @ngdoc directive
      * @scope {}
      * @restrict E
