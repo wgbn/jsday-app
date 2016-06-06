@@ -11,7 +11,7 @@
         .module('jsday')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$scope', 'fireService', 'Utils'];
+    HomeCtrl.$inject = ['$scope', 'fireService', 'Utils', 'objectsFactory'];
 
     /**
      * @memberof jsday
@@ -21,10 +21,11 @@
      * @param fireService {factory}     Firebase service
      * @param Utils {factory}           Funções utilitárias
      */
-    function HomeCtrl($scope, fireService, Utils) {
+    function HomeCtrl($scope, fireService, Utils, objectsFactory) {
         $scope.parseDateToStr = _parseDateToStr;
 
         _carregaPalestras();
+        _mockObjects();
 
         ///////////////////////
 
@@ -48,6 +49,14 @@
          */
         function _carregaPalestras () {
             $scope.palestras = fireService.getPalestras();
+        }
+
+        function _mockObjects () {
+            var palestra = objectsFactory.newPalestra();
+
+            palestra.nome = "teste";
+            palestra.hora = "10:30";
+            palestra.save();
         }
     }
 })();

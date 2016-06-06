@@ -33,7 +33,8 @@
             getPalestras:   _getPalestras,
             getPalestra:    _getPalestra,
             addPalestra:    _addPalestra,
-            updatePalestra: _updatePalestra
+            updatePalestra: _updatePalestra,
+            testeObject:    _testeObject
         };
 
         _loading();
@@ -111,6 +112,10 @@
          */
         function _updatePalestra (_palestra, _item) {
             db.child('palestras').child(_palestra.$id).child(_item).set(_palestra[_item]);
+        }
+
+        function _testeObject(_obj) {
+            console.info(_obj);
         }
     }
 })();
