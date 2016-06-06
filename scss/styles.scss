@@ -9,6 +9,8 @@
 @import "directives/jsday-palestras";
 @import "directives/jsday-nova-nota";
 @import "directives/jsday-sem-conteudo";
+@import "directives/jsday-fab";
+@import "directives/jsday-comentario";
 
 * {
     box-sizing: border-box;
@@ -120,6 +122,11 @@
 
             @include border-radius(3px);
         }
+        & .slides {
+            background-color: $energized;
+            color: #333;
+            float: right;
+        }
     }
 }
 
@@ -164,8 +171,31 @@
 }
 
 .nota {
-    background-color: #FFF8E1;
+    //background-color: #FFF8E1;
+    background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+    background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+    background: -o-linear-gradient(#F9EFAF, #F7E98D);
+    background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+    background: linear-gradient(#F9EFAF, #F7E98D);
+    box-shadow:0 3px 4px rgba(0,0,0,0.1);
     color: #666;
-    font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+    //font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+    font-family: 'GloriaHallelujah', cursive;
     font-size: 1.2em;
+    margin-bottom: .7em;
+}
+
+.sheets {
+    & .action-sheet-group {
+        background-color: #F9EFAF;
+    }
+    & button {
+        @include border-radius(3px);
+        box-sizing: border-box;
+        text-align: center !important;
+        margin: 0 !important;
+        background-color: $assertive !important;
+        color: #fff !important;
+        width: 100%;
+    }
 }

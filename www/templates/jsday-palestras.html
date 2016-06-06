@@ -1,4 +1,4 @@
-<div class="list card jsday-palestras" ng-click="palestraClick()">
+<div class="list jsday-palestras" ng-click="palestraClick()">
 
     <div class="item item-body palestra-titulo" ng-hide="palestra.servico">
         <p>
@@ -11,13 +11,13 @@
         <strong class="avatar" style="background-image: url({{palestra.autor.avatar}});"></strong>
         <div class="dados">
             <strong>{{palestra.autor.nome}}</strong>
-            <em class="palestra-hora"><i class="ion-ios-clock-outline"></i> {{palestra.hora}}</em>
+            <em class="palestra-hora"><i class="ion-ios-clock-outline"></i> {{palestra.horaExtenso}}</em>
         </div>
     </div>
 
     <div class="item" ng-show="palestra.servico">
         <span class="servico-titulo">{{palestra.nome}}</span>
-        <span class="servico-hora"><i class="ion-ios-clock-outline"></i> {{palestra.hora}}</span>
+        <span class="servico-hora"><i class="ion-ios-clock-outline"></i> {{palestra.horaExtenso}}</span>
     </div>
 
 </div>

@@ -1,6 +1,8 @@
 <ion-view title="Palestra">
     <jsday-app-bar back="true" acao="btnVoltar()"></jsday-app-bar>
 
+    <jsday-fab icone="ion-plus" acao="addClick()"></jsday-fab>
+
     <ion-tabs class="tabs-energized abas">
 
         <ion-tab title="Palestra">
@@ -17,6 +19,10 @@
                     <div class="linha">
                         <div class="redes">
                             <a ng-repeat="rede in palestra.autor.redes" href="{{rede.valor}}" target="_blank"><i class="icon ion-{{rede.tipo}}"></i></a>
+
+                            <a href="{{palestra.slide}}" target="_blank" class="slides" ng-show="showSlides">
+                                <i class="icon ion-android-download"></i>&nbsp;slides
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -41,10 +47,9 @@
             <ion-content class="area-com-barra padding">
 
                 <jsday-nova-nota palestra="key"></jsday-nova-nota>
-
                 <jsday-sem-conteudo conteudo="nota" ng-hide="notas.length"></jsday-sem-conteudo>
 
-                <div class="card padding nota" ng-repeat="nota in notas">
+                <div class="padding nota" ng-repeat="nota in notas" on-hold="onHoldNota(nota.id)">
                     {{nota.text}}
                 </div>
 
@@ -52,10 +57,10 @@
         </ion-tab>
 
         <ion-tab title="Comentários">
+
             <ion-content class="area-com-barra">
-
                 <jsday-sem-conteudo conteudo="comentario" ng-hide="comentarios.length"></jsday-sem-conteudo>
-
+                <jsday-comentario ng-repeat="comentario in palestra.comentarios" comentario="comentario"></jsday-comentario>
             </ion-content>
         </ion-tab>
 

@@ -32,9 +32,10 @@
         var _return = {
             getPalestras:   _getPalestras,
             getPalestra:    _getPalestra,
+            getComentarios: _getComentarios,
             addPalestra:    _addPalestra,
-            updatePalestra: _updatePalestra,
-            testeObject:    _testeObject
+            addComentario:  _addComentario,
+            updatePalestra: _updatePalestra
         };
 
         _loading();
@@ -87,7 +88,7 @@
                 if (_val.$id == _key)
                     result = _val;
             });
-
+            
             return result;
         }
 
@@ -114,8 +115,40 @@
             db.child('palestras').child(_palestra.$id).child(_item).set(_palestra[_item]);
         }
 
-        function _testeObject(_obj) {
-            console.info(_obj);
+        /**
+         * Adiciona um comentário à palestra
+         * @memberof fireService
+         * @function _addComentario
+         * @param {Object} _palestra    A palestra a ser adicionada o comentário
+         * @param {Object} _comentario  O comentário
+         */
+        function _addComentario (_palestra, _comentario) {
+            var _dt = new Date();
+
+            _comentario.registro = _dt.getTime();
+            _palestra.comentarios = _palestra.comentarios || {};
+            _palestra.comentarios[_dt.getTime().toString()] = _comentario;
+
+            db.child('palestras').child(_palestra.$id).child("comentarios").child(_dt.getTime().toString()).set(_comentario);
+            return _getComentarios(_palestra);
+        }
+
+        /**
+         * Lista os comentarios de uma palestra
+         * @memberof fireService
+         * @function _getComentarios
+         * @param {Object} palestra
+         * @returns {Array} Lista de comentarios
+         */
+        function _getComentarios (_palestra) {
+            if (!_palestra.comentarios)
+                return {};
+
+            var res = [];
+            Object.keys(_palestra.comentarios).forEach(function(_key){
+                res.push(_palestra.comentarios[_key]);
+            });
+            return res;
         }
     }
 })();

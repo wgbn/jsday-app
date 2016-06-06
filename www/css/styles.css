@@ -9914,60 +9914,62 @@ directive: jsday-app-bar
 /*
 directive: jsday-palestras
 */
-.jsday-palestras strong {
-  font-size: 1.2em;
-  font-weight: normal;
-  color: #666;
-  font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans"; }
-
-.jsday-palestras .servico-titulo, .jsday-palestras .servico-hora {
-  display: block;
-  text-align: center;
-  font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans"; }
-
-.jsday-palestras .servico-titulo {
-  color: #666;
-  font-size: 1.1em;
-  font-weight: normal; }
-
-.jsday-palestras .servico-hora {
-  color: #FF9800; }
-
-.jsday-palestras .item-body {
-  padding: 0 !important; }
-
-.jsday-palestras .palestra-header .avatar {
-  -webkit-border-radius: 50%;
-  -khtml-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px; }
-
-.jsday-palestras .palestra-header .dados {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -moz-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: .5em; }
-  .jsday-palestras .palestra-header .dados strong, .jsday-palestras .palestra-header .dados em {
-    display: block; }
-  .jsday-palestras .palestra-header .dados .palestra-hora {
-    color: #FF9800;
-    font-size: 1.1em;
+.jsday-palestras {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+  .jsday-palestras .item {
+    border: 0; }
+  .jsday-palestras strong {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #666;
     font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans"; }
-
-.jsday-palestras .palestra-titulo {
-  text-align: center; }
-  .jsday-palestras .palestra-titulo p {
-    margin: 0;
-    padding: .5em; }
+  .jsday-palestras .servico-titulo, .jsday-palestras .servico-hora {
+    display: block;
+    text-align: center;
+    font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans"; }
+  .jsday-palestras .servico-titulo {
+    color: #666;
+    font-size: 1.1em;
+    font-weight: normal; }
+  .jsday-palestras .servico-hora {
+    color: #FF9800; }
+  .jsday-palestras .item-body {
+    padding: 0 !important; }
+  .jsday-palestras .palestra-header .avatar {
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px; }
+  .jsday-palestras .palestra-header .dados {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: .5em; }
+    .jsday-palestras .palestra-header .dados strong, .jsday-palestras .palestra-header .dados em {
+      display: block; }
+    .jsday-palestras .palestra-header .dados .palestra-hora {
+      color: #FF9800;
+      font-size: 1.1em;
+      font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans"; }
+  .jsday-palestras .palestra-titulo {
+    text-align: center; }
+    .jsday-palestras .palestra-titulo p {
+      margin: 0;
+      padding: .5em; }
 
 .jsday-palestras:last-child {
-  margin-bottom: .3em !important; }
+  margin-bottom: .5em; }
 
 /*
 directive: jsday-nova-nota
@@ -10020,13 +10022,79 @@ directive: jsday-nova-nota
     display: block;
     color: #999; }
 
+.jsday-fab {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 59px;
+  right: 8px;
+  background-color: #ffc900;
+  z-index: 9999;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -khtml-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
+  .jsday-fab i {
+    color: #fff;
+    font-size: 1.5em; }
+
+.jsday-comentario {
+  background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+  background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+  background: -o-linear-gradient(#F9EFAF, #F7E98D);
+  background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+  background: linear-gradient(#F9EFAF, #F7E98D);
+  font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+  margin-bottom: 1em;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
+  .jsday-comentario p {
+    color: #666;
+    line-height: normal;
+    padding: .5em;
+    font-family: 'GloriaHallelujah', cursive;
+    margin: 0; }
+  .jsday-comentario .coment-footer {
+    background-color: #FFD54F;
+    padding: .5em;
+    color: #333; }
+
+.com-input, .com-text {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #999 !important;
+  margin-bottom: .3em;
+  background-color: transparent; }
+
+.com-text {
+  height: 45px;
+  resize: none; }
+
 * {
   box-sizing: border-box; }
 
 /*
 * Mixins
 */
-.jsday-sem-conteudo {
+.jsday-sem-conteudo, .jsday-fab {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -10123,6 +10191,11 @@ directive: jsday-nova-nota
   -o-border-radius: 3px;
   border-radius: 3px; }
 
+.autor .redes .slides {
+  background-color: #ffc900;
+  color: #333;
+  float: right; }
+
 .sessao-palestra {
   margin: 1em 0;
   padding: 1em 0;
@@ -10154,7 +10227,30 @@ directive: jsday-nova-nota
     color: #666; }
 
 .nota {
-  background-color: #FFF8E1;
+  background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+  background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+  background: -o-linear-gradient(#F9EFAF, #F7E98D);
+  background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+  background: linear-gradient(#F9EFAF, #F7E98D);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
   color: #666;
-  font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
-  font-size: 1.2em; }
+  font-family: 'GloriaHallelujah', cursive;
+  font-size: 1.2em;
+  margin-bottom: .7em; }
+
+.sheets .action-sheet-group {
+  background-color: #F9EFAF; }
+
+.sheets button {
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  text-align: center !important;
+  margin: 0 !important;
+  background-color: #ef473a !important;
+  color: #fff !important;
+  width: 100%; }

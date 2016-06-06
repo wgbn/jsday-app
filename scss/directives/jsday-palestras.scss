@@ -2,6 +2,12 @@
 directive: jsday-palestras
 */
 .jsday-palestras {
+    @include box-shadow(0, 1px, 3px, rgba(0,0,0,.25));
+
+    & .item {
+        border: 0;
+    }
+
     & strong {
         font-size: 1.2em;
         font-weight: normal;
@@ -61,5 +67,6 @@ directive: jsday-palestras
     }
 }
 .jsday-palestras:last-child {
-    margin-bottom: .3em !important;
+    //margin-bottom: .3em !important;
+    margin-bottom: .5em;
 }

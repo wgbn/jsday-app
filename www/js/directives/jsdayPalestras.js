@@ -47,7 +47,7 @@
      * @param {service} $scope  Escopo do controller
      */
     function ctrlPalestras ($scope, $state, Utils) {
-        $scope.palestra.hora = Utils.parseTimeToStr($scope.palestra.hora);
+        $scope.palestra.horaExtenso = Utils.parseTimeToStr($scope.palestra.hora);
         $scope.palestraClick = _palestraClick;
 
         /////////////////////////////

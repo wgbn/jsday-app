@@ -1,0 +1,38 @@
+.jsday-comentario {
+    background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+    background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+    background: -o-linear-gradient(#F9EFAF, #F7E98D);
+    background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+    background: linear-gradient(#F9EFAF, #F7E98D);
+    font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
+    margin-bottom: 1em;
+
+    @include border-radius(2px);
+    @include box-shadow(0, 1px, 3px, rgba(0,0,0,.15));
+
+    & p {
+        color: #666;
+        line-height: normal;
+        padding: .5em;
+        font-family: 'GloriaHallelujah', cursive;
+        margin: 0;
+    }
+
+    & .coment-footer {
+        background-color: #FFD54F;
+        padding: .5em;
+        color: #333;
+    }
+}
+
+.com-input, .com-text {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #999 !important;
+    margin-bottom: .3em;
+    background-color: transparent;
+}
+.com-text {
+    height: 45px;
+    resize: none;
+}
