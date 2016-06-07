@@ -16,27 +16,27 @@ No aplicativo, o usuário pode consultar a grade de palestras, fazer anotações
 
 Você pode fazer um fork deste repositório ou clona-lo diretamente para sua máquina de trabalho:
 
-`git clone https://github.com/wgbn/jsday-app.git`
+```$ git clone https://github.com/wgbn/jsday-app.git```
 
 E então você deve entrar na pasta do app e instalar as dependências:
 
-`cd jsday-app`
+```$ cd jsday-app```
 
-`npm install -g ionic cordova gulp`
+```$ npm install -g ionic cordova gulp```
 
-`npm install`
+```$ npm install```
 
-`bower install`
+```$ bower install```
 
-`ionic state restore`
+```$ ionic state restore```
 
 Para testar o app no browser:
 
-`ionic serve`
+```$ ionic serve```
 
 Para editar os arquivos, você deve ativar a task padrão do **gulp** pois os arquivos estão separados e para testar é preciso cancatena-los e minifica-los.
 Antes de começar a editar, rode:
 
-`gulp`
+```$ gulp```
 
 E está tudo pronto!
