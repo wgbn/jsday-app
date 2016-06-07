@@ -25,8 +25,16 @@
      *   Manipula os dados e faz o acesso á base do Firebase
      */
     function fireService ($firebaseArray, Utils, $ionicLoading, $ionicPopup) {
-
-        var db = new Firebase("https://jsday-app.firebaseio.com"); //.orderByChild('event_start').startAt(new Date().getTime());
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBdYNwQollKcyF6hQaJCfsVwKA0_GMi9Yc",
+            authDomain: "jsday-app.firebaseapp.com",
+            databaseURL: "https://jsday-app.firebaseio.com",
+            storageBucket: "jsday-app.appspot.com"
+        };
+        firebase.initializeApp(config);
+        
+        var db = firebase.database().ref();
         var sync = $firebaseArray(db.child('palestras'));
 
         var _return = {
@@ -88,7 +96,7 @@
                 if (_val.$id == _key)
                     result = _val;
             });
-            
+
             return result;
         }
 
