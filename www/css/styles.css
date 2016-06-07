@@ -9920,7 +9920,8 @@ directive: jsday-palestras
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e6e6e6; }
   .jsday-palestras .item {
     border: 0; }
   .jsday-palestras strong {

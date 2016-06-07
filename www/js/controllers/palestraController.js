@@ -53,6 +53,7 @@
         $scope.btnVoltar = _btnVoltar;
         $scope.addClick = _addClick;
         $scope.onHoldNota = _onHoldNota;
+        $scope.getUrl = _getUrl;
         $scope.$on('notaAdded', _notaAdded);
 
         _getNotas();
@@ -196,6 +197,20 @@
         function _showSlides () {
             var _hoje = new Date();
             return _hoje.getTime() >= $scope.palestra.hora && $scope.palestra.slide;
+        }
+
+        /**
+         * Transforma a url a ser exibida
+         * @memberof PalestraCtrl
+         * @function _getUrl
+         * @param {String} _tipo
+         * @param {String} _url
+         * @returns {String} url
+         */
+        function _getUrl (_tipo, _url) {
+            if (_tipo == 'social-twitter')
+                return "http://twitter.com/"+_url.replace('@','');
+            return _url;
         }
 
     }

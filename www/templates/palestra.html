@@ -18,7 +18,7 @@
                     </div>
                     <div class="linha">
                         <div class="redes">
-                            <a ng-repeat="rede in palestra.autor.redes" href="{{rede.valor}}" target="_blank"><i class="icon ion-{{rede.tipo}}"></i></a>
+                            <a ng-repeat="rede in palestra.autor.redes" href="{{getUrl(rede.tipo, rede.valor)}}" target="_blank"><i class="icon ion-{{rede.tipo}}"></i></a>
 
                             <a href="{{palestra.slide}}" target="_blank" class="slides" ng-show="showSlides">
                                 <i class="icon ion-android-download"></i>&nbsp;slides
