@@ -16,7 +16,9 @@ No aplicativo, o usuário pode consultar a grade de palestras, fazer anotações
 
 Você pode fazer um fork deste repositório ou clona-lo diretamente para sua máquina de trabalho:
 
-```$ git clone https://github.com/wgbn/jsday-app.git```
+```bash
+$ git clone https://github.com/wgbn/jsday-app.git
+```
 
 E então você deve entrar na pasta do app e instalar as dependências:
 
