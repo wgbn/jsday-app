@@ -53,7 +53,7 @@
         $scope.btnVoltar = _btnVoltar;
         $scope.addClick = _addClick;
         $scope.onHoldNota = _onHoldNota;
-        $scope.getUrl = _getUrl;
+        $scope.goToUrl = _goToUrl;
         $scope.$on('notaAdded', _notaAdded);
 
         _getNotas();
@@ -200,17 +200,19 @@
         }
 
         /**
-         * Transforma a url a ser exibida
+         * Abre a url externa no navegador nativo
          * @memberof PalestraCtrl
-         * @function _getUrl
-         * @param {String} _tipo
-         * @param {String} _url
+         * @function _goToUrl
+         * @param {Object} _rede
          * @returns {String} url
          */
-        function _getUrl (_tipo, _url) {
-            if (_tipo == 'social-twitter')
-                return "http://twitter.com/"+_url.replace('@','');
-            return _url;
+        function _goToUrl (_rede) {
+            var url = _rede.valor;
+
+            if (_rede.tipo == 'social-twitter')
+                url = "http://twitter.com/"+url.replace('@','');
+            
+            window.open(url, '_system');
         }
 
     }
