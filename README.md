@@ -4,6 +4,8 @@ O **JSDay App** é um aplicativo feito em Ionic, pela comunidade JavaSctipt, par
 
 No aplicativo, o usuário pode consultar a grade de palestras, fazer anotações, avaliar a palestra e fazer comentários.
 
+[![Demonstração JSDay App](http://img.youtube.com/vi/obO6FVFFSL0/0.jpg)](https://www.youtube.com/watch?v=obO6FVFFSL0)
+
 ## Tecnologias Utilizadas
 
 - [Ionic](http://ionicframework.com "Ionic") / [AngularJS](https://angularjs.org "AngularJS") / [Cordova](https://cordova.apache.org "Cordova") (como combo de desenvolvimento base)
