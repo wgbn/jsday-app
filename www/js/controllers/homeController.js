@@ -30,6 +30,9 @@
 
         /**
          * Função que converte uma data
+         * Esta função chama o factory Utils para formatar e converter uma data no formato timestamp para que possa
+         * ser lida por humanos.
+         * 
          * @memberof HomeCtrl
          * @function _parseDateToStr
          * @param {Number} _data        Timestamp da data a ser resolvida

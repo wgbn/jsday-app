@@ -38,6 +38,7 @@
      */
     function PalestraCtrl($scope, $rootScope, $state, $stateParams, $ionicPopup, $ionicActionSheet, fireService, Utils, ionicToast, noteService) {
 
+        // expondo os bindings para a view
         $scope.key = $stateParams.key;
         $scope.palestra = fireService.getPalestra($stateParams.key);
         $scope.rate = {};
@@ -49,6 +50,7 @@
         $scope.comentarios = fireService.getComentarios($scope.palestra);
         $scope.showSlides = _showSlides();
 
+        // expondo as funções para a view
         $scope.rateClick = _rateClick;
         $scope.btnVoltar = _btnVoltar;
         $scope.addClick = _addClick;
@@ -62,6 +64,10 @@
 
         /**
          * Função que captura o clique na diretiva de avaliação e salva o voto do usuário
+         * Esta função verifica se já existe um registro no localStorage do dispositivo indicando
+         * que o usuário já voto nesta palestra e, portanto, impedindo que ele vote novamente.
+         * Caso não exista esse registro local, o voto é computado e é feito o registro local.
+         *
          * @memberof PalestraCtrl
          * @function _rateClick
          * @private
@@ -88,7 +94,9 @@
         }
 
         /**
-         * Função que escuta o evento notaAdded e atualiza as notas na tela
+         * Função que escuta o evento notaAdded, verifica se a Key que vem com o evento é da mesma palestra que o usuário
+         * está visualizando e atualiza as notas na tela
+         *
          * @memberof PalestraCtrl
          * @function _notaAdded
          * @param {Object} e        Event object
@@ -113,7 +121,11 @@
         }
 
         /**
-         * Botão que adiciona um comentário à palestra
+         * Função que captura a ação do botão que exibe o formulário para comentar a palestra.
+         * Esta função verifica se o horário da palestra já foi alcançado. Se a data/hora atual, baseada no
+         * timestamp, for maior que o timestamp da palestra então exibe o formulário, caso contrário exibe um Toast
+         * que informa ao usuário que deve aguardar o início da palestra.
+         *
          * @memberof PalestraCtrl
          * @function _addClick
          */
@@ -150,19 +162,19 @@
                     ]
                 });
 
-                /*comPopup.then(function(res) {
-                    $scope.comentarios = fireService.addComentario($scope.palestra, res);
-                }, function (err) {
-                    console.info('cancel');
-                });*/
-
             } else {
                 ionicToast.show('Você só poderá comengar após o início da palestra.', 'bottom', false, 2500);
             }
         }
 
         /**
-         * Ação executada ao segurar em cima de uma nota
+         * Ação executada ao manter o dedo sobre uma nota por alguns segundos.
+         * Está função utiliza um plugin do Ionic para exibir uma ActionSheet para o usuário decidir se vai excluir
+         * ou não a nota pressionada.
+         * Caso o usuário opte por excluir, a função procede chamando o service que manipula o Lovefield.
+         * Ao concluir a exclusão, a função emite um evento 'notaAdded' que é responsável por propagar a atualização
+         * da lista de notas.
+         *
          * @memberof PalestraCtrl
          * @function _onHoldNota
          */
@@ -190,6 +202,9 @@
 
         /**
          * Verifica se o botão de slides pode ser exibido
+         * Esta função tem como objetivo verificar se a palestra já foi iniciada, baseada no timestamp atual e no timestamp
+         * da palestra, para só exibir o botão do slide após o início da palestra.
+         *
          * @memberof PalestraCtrl
          * @function _showSlides
          * @returns {Boolean}
@@ -201,6 +216,8 @@
 
         /**
          * Abre a url externa no navegador nativo
+         * Esta função faz uso do plugin InAppBrowser do cordova para abrir os links da palestra externamente.
+         * 
          * @memberof PalestraCtrl
          * @function _goToUrl
          * @param {Object} _rede
@@ -211,7 +228,7 @@
 
             if (_rede.tipo == 'social-twitter')
                 url = "http://twitter.com/"+url.replace('@','');
-            
+
             window.open(url, '_system');
         }
 
