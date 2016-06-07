@@ -57,7 +57,7 @@
 
         _getNotas();
 
-        /////////////////////// 
+        ///////////////////////
 
         /**
          * Função que captura o clique na diretiva de avaliação e salva o voto do usuário
@@ -195,7 +195,7 @@
          */
         function _showSlides () {
             var _hoje = new Date();
-            return _hoje.getTime() >= $scope.palestra.hora;
+            return _hoje.getTime() >= $scope.palestra.hora && $scope.palestra.slide;
         }
 
     }
