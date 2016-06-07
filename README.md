@@ -16,7 +16,7 @@ No aplicativo, o usuário pode consultar a grade de palestras, fazer anotações
 
 Você pode fazer um fork deste repositório ou clona-lo diretamente para sua máquina de trabalho:
 
-```bash
+```javascript
 $ git clone https://github.com/wgbn/jsday-app.git
 ```
 
