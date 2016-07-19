@@ -11,7 +11,7 @@
         .module('jsday')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$scope', 'fireService', 'Utils'];
+    HomeCtrl.$inject = ['$scope', '$ionicSideMenuDelegate', 'fireService', 'Utils'];
 
     /**
      * @memberof jsday
@@ -21,9 +21,14 @@
      * @param fireService {factory}     Firebase service
      * @param Utils {factory}           Funções utilitárias
      */
-    function HomeCtrl($scope, fireService, Utils) {
+    function HomeCtrl($scope, $ionicSideMenuDelegate, fireService, Utils) {
+        // bindings
         $scope.parseDateToStr = _parseDateToStr;
 
+        // ações
+        $scope.abreMenuClick = _abreMenuClick;
+
+        // init
         _carregaPalestras();
 
         ///////////////////////
@@ -32,7 +37,7 @@
          * Função que converte uma data
          * Esta função chama o factory Utils para formatar e converter uma data no formato timestamp para que possa
          * ser lida por humanos.
-         * 
+         *
          * @memberof HomeCtrl
          * @function _parseDateToStr
          * @param {Number} _data        Timestamp da data a ser resolvida
@@ -51,6 +56,15 @@
          */
         function _carregaPalestras () {
             $scope.palestras = fireService.getPalestras();
+        }
+
+        /**
+         * Função que a gre o menu lateral
+         * @memberof HomeCtrl
+         * @function _abreMenuClick
+         */
+        function _abreMenuClick () {
+            $ionicSideMenuDelegate.toggleLeft();
         }
     }
 })();

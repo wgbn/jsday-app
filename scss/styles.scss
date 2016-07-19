@@ -12,6 +12,7 @@
 @import "directives/jsday-sem-conteudo";
 @import "directives/jsday-fab";
 @import "directives/jsday-comentario";
+@import "directives/jsday-workshop-item";
 
 * {
     box-sizing: border-box;
@@ -77,6 +78,97 @@
     background-color: #eeeeee;
 }
 
+.menubar {
+    .degrade-menu {
+        @include background-gradient(#e8c83a, #f9eb8f);
+    }
+    .mapa {
+        width: 100%;
+        height: 20vh;
+        display: inline-block;
+        margin: 0;
+        @extend %cover;
+    }
+    .lista-menu {
+        margin: 0;
+        padding: 0;
+
+        li {
+            border-bottom: 1px solid #dab940;
+            margin: 0;
+
+            a {
+                padding: 1em;
+                text-decoration: none;
+                color: #333;
+                @extend %flex-center-left;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+                span {
+                    padding-left: .6em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        li:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .patrocinadores {
+        @extend %flex-center-center;
+        @include flex-direction(column);
+        background-color: #fff;
+
+        label {
+            text: {
+                transform: uppercase;
+                align: center;
+            }
+            font-size: .7em;
+            padding: .3em;
+            display: block;
+        }
+
+        .logos {
+            @extend %flex-center-center;
+            @include flex-wrap(wrap);
+            padding: 0 1em;
+
+            img {
+                display: inline-block;
+                width: 48%;
+                margin: .5em 1%;
+            }
+        }
+    }
+
+    .apoio {
+        @extend %flex-center-center;
+        @include flex-direction(column);
+        background-color: #fff;
+
+        label {
+            text: {
+                transform: uppercase;
+                align: center;
+            }
+            font-size: .7em;
+            padding: .3em;
+            display: block;
+        }
+
+        img {
+            display: inline-block;
+            width: 38%;
+            margin: .5em;
+        }
+    }
+}
+
 .autor {
     & .linha {
         @extend %flex-center-left;
@@ -132,6 +224,61 @@
     }
 }
 
+.autor-v2 {
+    @extend %flex-center-left;
+    @include align-items();
+    border: 1px solid #e0e0e0;
+
+    .avatar {
+        width: 30%;
+        @extend %cover;
+    }
+    .dados {
+        width: 70%;
+        padding: .5em;
+        @extend %flex-center-left;
+        @include flex-direction(column);
+
+        strong {
+            display: block;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .bio {
+            white-space: normal;
+            font-size: .8em;
+            line-height: normal;
+            color: #666;
+            text-align: justify;
+        }
+
+        .redes {
+            @extend %flex-center-left;
+            padding: .6em 0 0;
+
+            a {
+                text: {
+                    decoration: none;
+                }
+                display: inline-block;
+                padding: .3em .6em;
+                background-color: #999;
+                color: #fff;
+                margin: .2em;
+                font-size: 1em;
+
+                @include border-radius(3px);
+            }
+            .slides {
+                background-color: $energized;
+                color: #333;
+                float: right;
+            }
+        }
+    }
+}
+
 .sessao-palestra {
     margin: 1em 0;
     padding: 1em 0;
@@ -155,7 +302,7 @@
     & .descricao {
         font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
         font-size: 1.05em;
-        text-align: justify;
+        text-align: center;
         color: #666;
         line-height: normal;
     }

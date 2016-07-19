@@ -11,7 +11,7 @@
         .module('jsday')
         .factory('fireService', fireService);
 
-    fireService.$inject = ['$firebaseArray', 'Utils', '$ionicLoading', '$ionicPopup'];
+    fireService.$inject = ['$firebaseArray', '$firebaseObject', 'Utils', '$ionicLoading', '$ionicPopup'];
 
     /**
      * @memberof jsday
@@ -24,7 +24,7 @@
      * @description
      *   Manipula os dados e faz o acesso á base do Firebase
      */
-    function fireService ($firebaseArray, Utils, $ionicLoading, $ionicPopup) {
+    function fireService ($firebaseArray, $firebaseObject, Utils, $ionicLoading, $ionicPopup) {
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBdYNwQollKcyF6hQaJCfsVwKA0_GMi9Yc",
@@ -37,13 +37,17 @@
         var db = firebase.database().ref();
         var trilhas = $firebaseArray(db.child('trilhas').orderByChild('timestamp'));
         var sync = $firebaseArray(db.child('palestras').orderByChild('hora'));
+        var workshops = $firebaseArray(db.child('workshops'));
+        var appConfig = $firebaseObject(db.child('appConfig'));
 
         var _return = {
+            getAppConfig:   _getAppConfig,
             getTrilhas:     _getTrilhas,
             getTrilha :     _getTrilha,
             getPalestras:   _getPalestras,
             getPalestra:    _getPalestra,
             getComentarios: _getComentarios,
+            getWorkshops:   _getWorkshops,
             addPalestra:    _addPalestra,
             addComentario:  _addComentario,
             updatePalestra: _updatePalestra
@@ -52,6 +56,15 @@
         _loading();
 
         return _return;
+
+        /**
+         * Retorna o objeto de configuração
+         * @memberof fireService
+         * @function _getAppConfig
+         */
+        function _getAppConfig () {
+            return appConfig;
+        }
 
         /**
          * Escuta o carregamento inicial do array vindo do Firebase exibindo um ionicLoader
@@ -189,6 +202,15 @@
                 res.push(_palestra.comentarios[_key]);
             });
             return res;
+        }
+
+        /**
+         * Devolve a lista com os workshops
+         * @memberof fireService
+         * @function _getWorkshops
+         */
+        function _getWorkshops () {
+            return workshops;
         }
     }
 })();

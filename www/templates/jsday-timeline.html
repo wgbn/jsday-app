@@ -4,11 +4,14 @@
 
         <li ng-repeat="palestra in lista"
             class="palestra"
-            ng-class="{'trilha1': getTrilhaNome(palestra.trilha).id == 1, 'trilha2': getTrilhaNome(palestra.trilha).id == 2}">
+            ng-class="{'trilha1': getTrilhaNome(palestra.trilha).id == 1, 'trilha2': getTrilhaNome(palestra.trilha).id == 2, 'cor-servico': palestra.servico}">
             <div class="dados">
-                <strong class="hora">{{getHora(palestra.hora)}} - {{getTrilhaNome(palestra.trilha).nome}}</strong>
+                <strong class="hora">{{getHora(palestra.hora)}}
+                    <span ng-show="!palestra.servico"> - {{getTrilhaNome(palestra.trilha).nome}}</span>
+                    <span ng-show="palestra.servico"> - Serviço</span>
+                </strong>
 
-                <div class="card-palestra" ng-show="!palestra.servico">
+                <div class="card-palestra" ng-show="!palestra.servico" ng-click="palestraClick(palestra)">
                     <div class="box">
                         <div class="ponta">
                             <div>

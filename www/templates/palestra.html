@@ -8,7 +8,7 @@
         <ion-tab title="Palestra">
             <ion-content class="area-com-barra padding">
 
-                <div class="autor list">
+                <!--<div class="autor list">
                     <div class="linha">
                         <span class="avatar" style="background-image: url({{palestra.autor.avatar}});"></span>
                         <div class="dados">
@@ -17,6 +17,21 @@
                         </div>
                     </div>
                     <div class="linha">
+                        <div class="redes">
+                            <a ng-repeat="rede in palestra.autor.redes" ng-click="goToUrl(rede)"><i class="icon ion-{{rede.tipo}}"></i></a>
+
+                            <a ng-click="goToUrl({tipo: 'slide', valor: palestra.slide})" class="slides" ng-show="showSlides">
+                                <i class="icon ion-android-download"></i>&nbsp;slides
+                            </a>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="autor-v2">
+                    <div class="avatar" style="background-image: url({{palestra.autor.avatar}});"></div>
+                    <div class="dados">
+                        <strong>{{palestra.autor.nome}}</strong>
+                        <div class="bio">{{palestra.autor.bio}}</div>
                         <div class="redes">
                             <a ng-repeat="rede in palestra.autor.redes" ng-click="goToUrl(rede)"><i class="icon ion-{{rede.tipo}}"></i></a>
 

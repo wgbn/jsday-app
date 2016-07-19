@@ -54,6 +54,7 @@
         // ações
         $scope.getTrilhaNome = _getTrilhaNome;
         $scope.getHora = _getHora;
+        $scope.palestraClick = _palestraClick;
 
         // init
         _init();
@@ -65,9 +66,9 @@
          * @memberof jsdayTimeline
          * @function _palestraClick
          */
-        function _palestraClick () {
-            /*if (!$scope.palestra.servico)
-                $state.go('palestra', {key: $scope.palestra.$id});*/
+        function _palestraClick (_palestra) {
+            if (!_palestra.servico)
+                $state.go('app.palestra', {key: _palestra.$id});
         }
 
         /**

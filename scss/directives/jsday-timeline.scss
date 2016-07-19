@@ -30,6 +30,16 @@ directive: jsday-timeline
                 color: #F57C00;
             }
         }
+        .cor-servico {
+            border-left: 1px solid #4CAF50;
+
+            .hora {
+                color: #4CAF50;
+            }
+        }
+        .cor-servico:before {
+            background-color: #4CAF50;
+        }
 
         .palestra {
             position: relative;
@@ -46,9 +56,9 @@ directive: jsday-timeline
                     z-index: 3;
 
                     .texto {
-                        background-color: #FFC107;
+                        background-color: #4CAF50; //#FFC107;
                         padding: .5em 1em;
-                        color: #333;
+                        color: #fff;
                         font-size: 1.3em;
 
                         @include box-shadow(0, 0, 5px, rgba(0,0,0,.25));
@@ -57,7 +67,7 @@ directive: jsday-timeline
 
                     .ponta {
                         z-index: 10;
-                        background-color: #FFC107;
+                        background-color: #4CAF50; //#FFC107;
                         width: 15px;
                         height: 15px;
 

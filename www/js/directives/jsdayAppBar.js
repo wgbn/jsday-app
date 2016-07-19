@@ -53,6 +53,7 @@
     function appBarCtrl ($scope) {
         $scope.back = $scope.back || false;
         $scope.voltarClick = _voltarClick;
+        $scope.abreMenuClick = _abreMenuClick;
 
         /**
          * Função que captura o clique no botão voltar e delega para a função passada no escopo
@@ -60,6 +61,15 @@
          * @function _voltarClick
          */
         function _voltarClick () {
+            $scope.acao();
+        }
+
+        /**
+         * Abre o menu lateral
+         * @memberof jsdayAppBar
+         * @function _abreMenuClick
+         */
+        function _abreMenuClick () {
             $scope.acao();
         }
     }

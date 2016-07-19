@@ -9993,6 +9993,12 @@ directive: jsday-timeline
     border-left: 1px solid #F57C00; }
     .jsday-timeline .timeline .trilha2 .hora {
       color: #F57C00; }
+  .jsday-timeline .timeline .cor-servico {
+    border-left: 1px solid #4CAF50; }
+    .jsday-timeline .timeline .cor-servico .hora {
+      color: #4CAF50; }
+  .jsday-timeline .timeline .cor-servico:before {
+    background-color: #4CAF50; }
   .jsday-timeline .timeline .palestra {
     position: relative;
     padding-left: 20px;
@@ -10004,9 +10010,9 @@ directive: jsday-timeline
         display: inline-block;
         z-index: 3; }
         .jsday-timeline .timeline .palestra .card-servico .servico .texto {
-          background-color: #FFC107;
+          background-color: #4CAF50;
           padding: .5em 1em;
-          color: #333;
+          color: #fff;
           font-size: 1.3em;
           -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
           -khtml-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -10022,7 +10028,7 @@ directive: jsday-timeline
           border-radius: 2px; }
         .jsday-timeline .timeline .palestra .card-servico .servico .ponta {
           z-index: 10;
-          background-color: #FFC107;
+          background-color: #4CAF50;
           width: 15px;
           height: 15px;
           -webkit-transform: rotate(45deg) translateX(28px) translateY(-15px);
@@ -10255,13 +10261,63 @@ directive: jsday-nova-nota
   height: 45px;
   resize: none; }
 
+/*
+directive: jsday-workshop-item
+*/
+.jsday-workshop-item {
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1em; }
+  .jsday-workshop-item * {
+    box-sizing: border-box; }
+  .jsday-workshop-item .capa {
+    width: 100%;
+    height: 160px; }
+  .jsday-workshop-item .autor {
+    padding: .5em;
+    border-bottom: 1px solid #e0e0e0; }
+    .jsday-workshop-item .autor .autor-item {
+      width: 48%;
+      margin: 0 1%; }
+      .jsday-workshop-item .autor .autor-item .avatar {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        -webkit-border-radius: 50%;
+        -khtml-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+      .jsday-workshop-item .autor .autor-item .nome {
+        padding-left: .6em;
+        color: #333;
+        font-size: .8em; }
+    .jsday-workshop-item .autor .autor-item:first-child {
+      margin-bottom: .5em; }
+  .jsday-workshop-item .descricao {
+    font-size: .9em;
+    color: #333;
+    line-height: normal;
+    padding: .5em;
+    border-bottom: 1px solid #e0e0e0; }
+  .jsday-workshop-item .hora .hora-item {
+    width: 50%;
+    padding: .5em; }
+    .jsday-workshop-item .hora .hora-item img {
+      width: 15px; }
+    .jsday-workshop-item .hora .hora-item .time {
+      color: #333;
+      padding-left: .6em; }
+  .jsday-workshop-item .hora .hora-item:first-child {
+    border-right: 1px solid #e0e0e0; }
+
 * {
   box-sizing: border-box; }
 
 /*
 * Mixins
 */
-.jsday-sem-conteudo, .jsday-fab {
+.jsday-sem-conteudo, .jsday-fab, .menubar .patrocinadores, .menubar .patrocinadores .logos, .menubar .apoio {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -10278,7 +10334,7 @@ directive: jsday-nova-nota
   -moz-align-items: center;
   align-items: center; }
 
-.jsday-palestras .palestra-header, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto, .autor .linha, .autor .redes {
+.jsday-palestras .palestra-header, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto, .jsday-workshop-item .autor, .jsday-workshop-item .autor .autor-item, .jsday-workshop-item .hora, .menubar .lista-menu li a, .autor .linha, .autor .redes, .autor-v2, .autor-v2 .dados, .autor-v2 .dados .redes {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -10295,7 +10351,7 @@ directive: jsday-nova-nota
   -moz-align-items: center;
   align-items: center; }
 
-.jsday-palestras .palestra-header .avatar, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto .avatar, .autor .avatar {
+.jsday-palestras .palestra-header .avatar, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto .avatar, .jsday-workshop-item .capa, .jsday-workshop-item .autor .autor-item .avatar, .menubar .mapa, .autor .avatar, .autor-v2 .avatar {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -10313,6 +10369,85 @@ directive: jsday-nova-nota
   margin-top: 140px;
   padding: .5em;
   background-color: #eeeeee; }
+
+.menubar .degrade-menu {
+  background-color: #e8c83a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e8c83a), to(#f9eb8f));
+  background-image: -webkit-linear-gradient(top, #e8c83a, #f9eb8f);
+  background-image: -moz-linear-gradient(top, #e8c83a, #f9eb8f);
+  background-image: -ms-linear-gradient(top, #e8c83a, #f9eb8f);
+  background-image: -o-linear-gradient(top, #e8c83a, #f9eb8f);
+  background-image: linear-gradient(top, #e8c83a, #f9eb8f);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#e8c83a', endColorStr='#f9eb8f'); }
+
+.menubar .mapa {
+  width: 100%;
+  height: 20vh;
+  display: inline-block;
+  margin: 0; }
+
+.menubar .lista-menu {
+  margin: 0;
+  padding: 0; }
+  .menubar .lista-menu li {
+    border-bottom: 1px solid #dab940;
+    margin: 0; }
+    .menubar .lista-menu li a {
+      padding: 1em;
+      text-decoration: none;
+      color: #333; }
+      .menubar .lista-menu li a img {
+        width: 25px;
+        height: 25px; }
+      .menubar .lista-menu li a span {
+        padding-left: .6em;
+        text-transform: uppercase; }
+  .menubar .lista-menu li:last-child {
+    border-bottom: 0; }
+
+.menubar .patrocinadores {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff; }
+  .menubar .patrocinadores label {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .7em;
+    padding: .3em;
+    display: block; }
+  .menubar .patrocinadores .logos {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 1em; }
+    .menubar .patrocinadores .logos img {
+      display: inline-block;
+      width: 48%;
+      margin: .5em 1%; }
+
+.menubar .apoio {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff; }
+  .menubar .apoio label {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .7em;
+    padding: .3em;
+    display: block; }
+  .menubar .apoio img {
+    display: inline-block;
+    width: 38%;
+    margin: .5em; }
 
 .autor .linha {
   -webkit-box-align: start;
@@ -10363,6 +10498,55 @@ directive: jsday-nova-nota
   color: #333;
   float: right; }
 
+.autor-v2 {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  align-items: stretch;
+  border: 1px solid #e0e0e0; }
+  .autor-v2 .avatar {
+    width: 30%; }
+  .autor-v2 .dados {
+    width: 70%;
+    padding: .5em;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .autor-v2 .dados strong {
+      display: block;
+      color: #666;
+      font-size: 1.2em; }
+    .autor-v2 .dados .bio {
+      white-space: normal;
+      font-size: .8em;
+      line-height: normal;
+      color: #666;
+      text-align: justify; }
+    .autor-v2 .dados .redes {
+      padding: .6em 0 0; }
+      .autor-v2 .dados .redes a {
+        text-decoration: none;
+        display: inline-block;
+        padding: .3em .6em;
+        background-color: #999;
+        color: #fff;
+        margin: .2em;
+        font-size: 1em;
+        -webkit-border-radius: 3px;
+        -khtml-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
+      .autor-v2 .dados .redes .slides {
+        background-color: #ffc900;
+        color: #333;
+        float: right; }
+
 .sessao-palestra {
   margin: 1em 0;
   padding: 1em 0;
@@ -10381,7 +10565,7 @@ directive: jsday-nova-nota
   .sessao-palestra .descricao {
     font-family: "CodeNewRoman", Arial, SansSerif, "DejaVu Sans";
     font-size: 1.05em;
-    text-align: justify;
+    text-align: center;
     color: #666;
     line-height: normal; }
 

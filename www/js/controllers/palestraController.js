@@ -74,7 +74,8 @@
          */
         function _rateClick () {
             if (!Utils.getLocalStorage($stateParams.key)) {
-                $scope.palestra.avaliacao += $scope.rate.avaliacao;
+                $scope.palestra.avaliacao.total += $scope.rate.avaliacao;
+                $scope.palestra.avaliacao.votos++;
                 fireService.updatePalestra($scope.palestra, 'avaliacao');
                 Utils.setLocalStorage($stateParams.key, $scope.rate.avaliacao);
             } else {
@@ -90,7 +91,7 @@
          * @private
          */
         function _btnVoltar () {
-            $state.go('home');
+            $state.go('app.home');
         }
 
         /**
@@ -163,7 +164,7 @@
                 });
 
             } else {
-                ionicToast.show('Você só poderá comengar após o início da palestra.', 'bottom', false, 2500);
+                ionicToast.show('Você só poderá comentar após o início da palestra.', 'bottom', false, 2500);
             }
         }
 
@@ -217,7 +218,7 @@
         /**
          * Abre a url externa no navegador nativo
          * Esta função faz uso do plugin InAppBrowser do cordova para abrir os links da palestra externamente.
-         * 
+         *
          * @memberof PalestraCtrl
          * @function _goToUrl
          * @param {Object} _rede

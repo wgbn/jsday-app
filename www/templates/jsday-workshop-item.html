@@ -1,0 +1,23 @@
+<div class="jsday-workshop-item">
+    <div class="capa" style="background-image: url({{workshop.capa}});"></div>
+
+    <div class="descricao">{{workshop.descricao}}</div>
+
+    <div class="autor">
+        <div class="autor-item" ng-repeat="autor in workshop.autor">
+            <span class="avatar" style="background-image: url({{autor.avatar}});"></span>
+            <strong class="nome">{{autor.nome}}</strong>
+        </div>
+    </div>
+
+    <div class="hora">
+        <div class="hora-item">
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxwYXRoIGQ9Ik0zMCwwQzEzLjQ1OCwwLDAsMTMuNDU4LDAsMzBzMTMuNDU4LDMwLDMwLDMwczMwLTEzLjQ1OCwzMC0zMFM0Ni41NDIsMCwzMCwweiBNMzAsNThDMTQuNTYxLDU4LDIsNDUuNDM5LDIsMzAgICBTMTQuNTYxLDIsMzAsMnMyOCwxMi41NjEsMjgsMjhTNDUuNDM5LDU4LDMwLDU4eiIgZmlsbD0iIzMzMzMzMyIvPgoJPHBhdGggZD0iTTMwLDZjLTAuNTUyLDAtMSwwLjQ0Ny0xLDF2MjNIMTRjLTAuNTUyLDAtMSwwLjQ0Ny0xLDFzMC40NDgsMSwxLDFoMTZjMC41NTIsMCwxLTAuNDQ3LDEtMVY3QzMxLDYuNDQ3LDMwLjU1Miw2LDMwLDZ6IiBmaWxsPSIjMzMzMzMzIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            <span class="time">{{getHora(workshop.horaInicio)}} - {{getHora(workshop.horaFim)}}</span>
+        </div>
+        <div class="hora-item">
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIxNy4xMTEgMjE3LjExMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjE3LjExMSAyMTcuMTExOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnPgoJPHBhdGggZD0iTTEwOC41NTIsMEM2Mi40MjIsMCwyNC44OTEsMzcuNTM2LDI0Ljg5MSw4My42NzRjMCwzMi45NjcsMTMuODAyLDY2LjMxNCwzOS45MTMsOTYuNDM4ICAgYzE5LjUwMywyMi40OTksMzguODMxLDM1LjI0NiwzOS42NDQsMzUuNzc4YzEuMjQ3LDAuODE1LDIuNjc1LDEuMjIyLDQuMTA0LDEuMjIyYzEuNDI4LDAsMi44NTctMC40MDcsNC4xMDQtMS4yMjIgICBjMC44MTMtMC41MzIsMjAuMTQzLTEzLjI3OSwzOS42NDctMzUuNzc3YzI2LjExNC0zMC4xMjQsMzkuOTE3LTYzLjQ3MSwzOS45MTctOTYuNDM4QzE5Mi4yMiwzNy41MzYsMTU0LjY4NywwLDEwOC41NTIsMHogICAgTTEwOC41NTIsMjAwLjQwMmMtMTUuMzg3LTExLjQ2Ni02OC42NjEtNTUuNTk0LTY4LjY2MS0xMTYuNzI4QzM5Ljg5MSw0NS44MDcsNzAuNjkzLDE1LDEwOC41NTIsMTUgICBjMzcuODY0LDAsNjguNjY4LDMwLjgwNyw2OC42NjgsNjguNjc0QzE3Ny4yMiwxNDQuODA4LDEyMy45NDIsMTg4LjkzNiwxMDguNTUyLDIwMC40MDJ6IiBmaWxsPSIjMzMzMzMzIi8+Cgk8cGF0aCBkPSJNMTE0LjgxLDU0LjYyOGMtMi45My0yLjkyOS03LjY3OC0yLjkyOC0xMC42MDcsMGMtMi45MjksMi45MjktMi45MjgsNy42NzgsMC4wMDEsMTAuNjA3bDEwLjg3MywxMC44NzJIODQuMTc0ICAgYy00LjE0MiwwLTcuNSwzLjM1OC03LjUsNy41czMuMzU4LDcuNSw3LjUsNy41aDMwLjkwMmwtMTAuOTcxLDEwLjk3Yy0yLjkyOSwyLjkyOS0yLjkyOSw3LjY3OCwwLDEwLjYwNyAgIGMxLjQ2NSwxLjQ2NCwzLjM4NCwyLjE5Nyw1LjMwMywyLjE5N2MxLjkyLDAsMy44MzktMC43MzIsNS4zMDQtMi4xOTZsMjMuNzc1LTIzLjc3M2MxLjQwNy0xLjQwNywyLjE5Ny0zLjMxNCwyLjE5Ny01LjMwNCAgIGMwLTEuOTg5LTAuNzktMy44OTctMi4xOTctNS4zMDRMMTE0LjgxLDU0LjYyOHoiIGZpbGw9IiMzMzMzMzMiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+            <span class="time">{{workshop.local}}</span>
+        </div>
+    </div>
+</div>
