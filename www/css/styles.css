@@ -9973,6 +9973,172 @@ directive: jsday-palestras
   margin-bottom: .5em; }
 
 /*
+directive: jsday-timeline
+*/
+.jsday-timeline * {
+  box-sizing: border-box; }
+
+.jsday-timeline .timeline {
+  padding: 0;
+  list-style: none; }
+  .jsday-timeline .timeline .trilha1:before {
+    background-color: #FFC107; }
+  .jsday-timeline .timeline .trilha1 {
+    border-left: 1px solid #FFC107; }
+    .jsday-timeline .timeline .trilha1 .hora {
+      color: #FFC107; }
+  .jsday-timeline .timeline .trilha2:before {
+    background-color: #F57C00; }
+  .jsday-timeline .timeline .trilha2 {
+    border-left: 1px solid #F57C00; }
+    .jsday-timeline .timeline .trilha2 .hora {
+      color: #F57C00; }
+  .jsday-timeline .timeline .palestra {
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 1.5em;
+    margin-left: 7.5px; }
+    .jsday-timeline .timeline .palestra .card-servico {
+      position: relative; }
+      .jsday-timeline .timeline .palestra .card-servico .servico {
+        display: inline-block;
+        z-index: 3; }
+        .jsday-timeline .timeline .palestra .card-servico .servico .texto {
+          background-color: #FFC107;
+          padding: .5em 1em;
+          color: #333;
+          font-size: 1.3em;
+          -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          -khtml-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+          -webkit-border-radius: 2px;
+          -khtml-border-radius: 2px;
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+          border-radius: 2px; }
+        .jsday-timeline .timeline .palestra .card-servico .servico .ponta {
+          z-index: 10;
+          background-color: #FFC107;
+          width: 15px;
+          height: 15px;
+          -webkit-transform: rotate(45deg) translateX(28px) translateY(-15px);
+          -moz-transform: rotate(45deg) translateX(28px) translateY(-15px);
+          -ms-transform: rotate(45deg) translateX(28px) translateY(-15px);
+          -o-transform: rotate(45deg) translateX(28px) translateY(-15px);
+          transform: rotate(45deg) translateX(28px) translateY(-15px); }
+    .jsday-timeline .timeline .palestra .card-palestra .box {
+      width: 100%;
+      max-width: 300px;
+      padding-top: 10px;
+      margin: auto;
+      position: relative;
+      z-index: 3; }
+      .jsday-timeline .timeline .palestra .card-palestra .box .caixa {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        -khtml-box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        -ms-box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        -o-box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 1px;
+        -webkit-border-radius: 2px;
+        -khtml-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px; }
+        .jsday-timeline .timeline .palestra .card-palestra .box .caixa .foto {
+          height: 200px;
+          background-size: cover;
+          background-position: center center;
+          position: relative;
+          -webkit-border-radius: 2px 2px;
+          border-radius: 2px 2px; }
+          .jsday-timeline .timeline .palestra .card-palestra .box .caixa .foto .nome {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 98%;
+            padding: 1%;
+            font-size: 1.5em;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            font-weight: bold; }
+        .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto {
+          padding: .5em;
+          background-color: #fff;
+          -webkit-border-top-left-radius: 0;
+          -webkit-border-top-right-radius: 0;
+          -webkit-border-bottom-right-radius: 2px;
+          -webkit-border-bottom-left-radius: 2px;
+          -moz-border-radius-topleft: 0;
+          -moz-border-radius-topright: 0;
+          -moz-border-radius-bottomright: 2px;
+          -moz-border-radius-bottomleft: 2px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 2px;
+          border-bottom-left-radius: 2px; }
+          .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto .avatar {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%; }
+          .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto .autor {
+            padding-left: 1em;
+            font-size: 1.1em;
+            color: #333; }
+      .jsday-timeline .timeline .palestra .card-palestra .box .ponta {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        overflow: hidden;
+        z-index: 10;
+        -moz-transform: rotate(45deg) translateX(21px) translateY(-15px);
+        -webkit-transform: rotate(45deg) translateX(21px) translateY(-15px);
+        -o-transform: rotate(45deg) translateX(21px) translateY(-15px);
+        -ms-transform: rotate(45deg) translateX(21px) translateY(-15px);
+        transform: rotate(45deg) translateX(21px) translateY(-15px); }
+        .jsday-timeline .timeline .palestra .card-palestra .box .ponta div {
+          width: 300px;
+          height: 200px;
+          overflow: hidden;
+          -moz-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+          -webkit-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+          -o-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+          -ms-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+          transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+          -moz-transform-origin: 0 0;
+          -webkit-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          .jsday-timeline .timeline .palestra .card-palestra .box .ponta div img {
+            width: 300px; }
+  .jsday-timeline .timeline .palestra:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -7.5px;
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
+
+/*
 directive: jsday-nova-nota
 */
 .jsday-nova-nota textarea {
@@ -10112,7 +10278,7 @@ directive: jsday-nova-nota
   -moz-align-items: center;
   align-items: center; }
 
-.jsday-palestras .palestra-header, .autor .linha, .autor .redes {
+.jsday-palestras .palestra-header, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto, .autor .linha, .autor .redes {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -10129,7 +10295,7 @@ directive: jsday-nova-nota
   -moz-align-items: center;
   align-items: center; }
 
-.jsday-palestras .palestra-header .avatar, .autor .avatar {
+.jsday-palestras .palestra-header .avatar, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto .avatar, .autor .avatar {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -10146,7 +10312,7 @@ directive: jsday-nova-nota
 .area-com-barra {
   margin-top: 140px;
   padding: .5em;
-  background-color: #f5f5f5; }
+  background-color: #eeeeee; }
 
 .autor .linha {
   -webkit-box-align: start;

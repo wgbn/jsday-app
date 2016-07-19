@@ -1,0 +1,41 @@
+<div class="jsday-timeline">
+
+    <ul class="timeline">
+
+        <li ng-repeat="palestra in lista"
+            class="palestra"
+            ng-class="{'trilha1': getTrilhaNome(palestra.trilha).id == 1, 'trilha2': getTrilhaNome(palestra.trilha).id == 2}">
+            <div class="dados">
+                <strong class="hora">{{getHora(palestra.hora)}} - {{getTrilhaNome(palestra.trilha).nome}}</strong>
+
+                <div class="card-palestra" ng-show="!palestra.servico">
+                    <div class="box">
+                        <div class="ponta">
+                            <div>
+                                <img src="{{palestra.capa}}" alt="" />
+                            </div>
+                        </div>
+                        <div class="caixa">
+                            <div class="foto" style="background-image: url({{palestra.capa}});">
+                                <div class="nome">{{palestra.nome}}</div>
+                            </div>
+                            <div class="texto">
+                                <span class="avatar" style="background-image: url({{palestra.autor.avatar}});"></span>
+                                <strong class="autor">{{palestra.autor.nome}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-servico" ng-show="palestra.servico">
+                    <div class="servico">
+                        <div class="ponta"></div>
+                        <div class="texto">{{palestra.nome}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>

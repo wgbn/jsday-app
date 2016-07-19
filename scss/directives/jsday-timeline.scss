@@ -1,0 +1,180 @@
+/*
+directive: jsday-timeline
+*/
+.jsday-timeline {
+    * {
+        box-sizing: border-box;
+    }
+
+    .timeline {
+        padding: 0;
+        list-style: none;
+
+        .trilha1:before {
+            background-color: #FFC107;
+        }
+        .trilha1 {
+            border-left: 1px solid #FFC107;
+
+            .hora {
+                color: #FFC107;
+            }
+        }
+        .trilha2:before {
+            background-color: #F57C00;
+        }
+        .trilha2 {
+            border-left: 1px solid #F57C00;
+
+            .hora {
+                color: #F57C00;
+            }
+        }
+
+        .palestra {
+            position: relative;
+            padding-left: 20px;
+            padding-bottom: 1.5em;
+            margin-left: 7.5px;
+
+            .card-servico {
+                position: relative;
+                //padding-top: 10px;
+
+                .servico {
+                    display: inline-block;
+                    z-index: 3;
+
+                    .texto {
+                        background-color: #FFC107;
+                        padding: .5em 1em;
+                        color: #333;
+                        font-size: 1.3em;
+
+                        @include box-shadow(0, 0, 5px, rgba(0,0,0,.25));
+                        @include border-radius(2px);
+                    }
+
+                    .ponta {
+                        z-index: 10;
+                        background-color: #FFC107;
+                        width: 15px;
+                        height: 15px;
+
+                        -webkit-transform: rotate(45deg) translateX(28px) translateY(-15px);
+                        -moz-transform: rotate(45deg) translateX(28px) translateY(-15px);
+                        -ms-transform: rotate(45deg) translateX(28px) translateY(-15px);
+                        -o-transform: rotate(45deg) translateX(28px) translateY(-15px);
+                        transform: rotate(45deg) translateX(28px) translateY(-15px);
+                    }
+                }
+            }
+
+            .card-palestra {
+                .box {
+                    width: 100%;
+                    max-width: 300px;
+                    padding-top: 10px;
+                    margin: auto;
+                    position: relative;
+                    z-index: 3;
+
+                    .caixa {
+                        @include box-shadow(0, 0, 5px, 1px, rgba(0,0,0,.25));
+                        @include border-radius(2px);
+
+                        .foto {
+                            height: 200px;
+                            //background-image: url(http://lorempixel.com/400/200/people/7/);
+                            background-size: cover; //300px;
+                            background-position: center center; //0 -15px;
+                            position: relative;
+                            -webkit-border-radius: 2px 2px;
+                            border-radius: 2px 2px;
+
+                            .nome {
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                width: 98%;
+                                padding: 1%;
+                                font-size: 1.5em;
+                                color: #fff;
+                                text-shadow: 1px 1px 4px rgba(0,0,0,.8);
+                                font-weight: bold;
+                            }
+                        }
+
+                        .texto {
+                            padding: .5em;
+                            background-color: #fff;
+                            @include border-radius-separate(0, 0, 2px, 2px);
+                            @extend %flex-center-left;
+
+                            .avatar {
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+
+                                @extend %cover;
+                                @include border-radius(50%);
+                            }
+                            .autor {
+                                padding-left: 1em;
+                                font-size: 1.1em;
+                                color: #333;
+                            }
+                        }
+                    }
+
+                    .ponta {
+                        width: 15px;
+                        height: 15px;
+                        //background-color: #ccc;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        overflow: hidden;
+                        z-index: 10;
+
+                        -moz-transform: rotate(45deg) translateX(21px) translateY(-15px);
+                        -webkit-transform: rotate(45deg) translateX(21px) translateY(-15px);
+                        -o-transform: rotate(45deg) translateX(21px) translateY(-15px);
+                        -ms-transform: rotate(45deg) translateX(21px) translateY(-15px);
+                        transform: rotate(45deg) translateX(21px) translateY(-15px);
+
+                        div {
+                            width: 300px;
+                            height: 200px;
+                            overflow: hidden;
+                            -moz-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+                            -webkit-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+                            -o-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+                            -ms-transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+                            transform: rotate(-45deg) translateX(-33px) translateY(-5px);
+
+                            -moz-transform-origin: 0 0;
+                            -webkit-transform-origin: 0 0;
+                            -ms-transform-origin: 0 0;
+                            transform-origin: 0 0;
+
+                            img {
+                                width: 300px;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        .palestra:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -7.5px;
+            width: 15px;
+            height: 15px;
+            @include border-radius(50%);
+        }
+    }
+}

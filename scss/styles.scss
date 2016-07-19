@@ -7,6 +7,7 @@
 */
 @import "directives/jsday-app-bar";
 @import "directives/jsday-palestras";
+@import "directives/jsday-timeline";
 @import "directives/jsday-nova-nota";
 @import "directives/jsday-sem-conteudo";
 @import "directives/jsday-fab";
@@ -72,7 +73,8 @@
     margin-top: 140px;
     padding: .5em;
     //background-color: rgba(255, 201, 0, .1);
-    background-color: #f5f5f5;
+    //background-color: #f5f5f5;
+    background-color: #eeeeee;
 }
 
 .autor {

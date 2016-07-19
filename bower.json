@@ -11,6 +11,7 @@
     "ionic-toast": "^0.2.0",
     "lovefield": "^2.1.8",
     "jquery": "^2.2.4",
-    "firebase": "^3.0.4"
+    "firebase": "^3.0.4",
+    "moment": "^2.14.1"
   }
 }

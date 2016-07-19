@@ -2146,7 +2146,24 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
   var root, states = {}, $state, queue = {}, abstractKey = 'abstract';
 
   // Builds state properties from definition passed to registerState()
-  var stateBuilder = {
+  var stateBuilder = {schemaBuilder.connect().then(function(db) {
+      todoDb = db;
+      item = db.getSchema().table('Item');
+      var row = item.createRow({
+          'id': 1,
+          'description': 'Get a cup of coffee',
+          'deadline': new Date(),
+          'done': false
+      });
+
+      return db.insertOrReplace().into(item).values([row]).exec();
+  }).then(function() {
+      return todoDb.select().from(item).where(item.done.eq(false)).exec();
+  }).then(function(results) {
+      results.forEach(function(row) {
+          console.log(row['description'], 'before', row['deadline']);
+      });
+  });
 
     // Derive parent state from a hierarchical name only if 'parent' is not explicitly defined.
     // state.children = [];
