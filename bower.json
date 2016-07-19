@@ -11,8 +11,6 @@
     "ionic-toast": "^0.2.0",
     "lovefield": "^2.1.8",
     "jquery": "^2.2.4",
-    "ionic-material": "^0.4.2",
-    "robotodraft": "^1.1.0",
-    "firebase": "^3.0.3"
+    "firebase": "^3.0.4"
   }
 }

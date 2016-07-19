@@ -39,15 +39,16 @@
         return directive;
     }
 
-    ctrlPalestras.$inject = ['$scope', '$state', 'Utils'];
+    ctrlPalestras.$inject = ['$scope', '$state', 'Utils', 'fireService'];
 
     /**
      * Lógica da diretiva jsdayPalestras
      * @memberof jsdayPalestras
      * @param {service} $scope  Escopo do controller
      */
-    function ctrlPalestras ($scope, $state, Utils) {
+    function ctrlPalestras ($scope, $state, Utils, fireService) {
         $scope.palestra.horaExtenso = Utils.parseTimeToStr($scope.palestra.hora);
+        $scope.palestra.trilha = fireService.getTrilha($scope.palestra.trilha);
         $scope.palestraClick = _palestraClick;
 
         /////////////////////////////

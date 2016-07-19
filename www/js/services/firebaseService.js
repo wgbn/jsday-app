@@ -32,12 +32,15 @@
             databaseURL: "https://jsday-app.firebaseio.com",
             storageBucket: "jsday-app.appspot.com"
         };
-        firebase.initializeApp(config);
-        
+        var fbInit = firebase.initializeApp(config);
+
         var db = firebase.database().ref();
-        var sync = $firebaseArray(db.child('palestras'));
+        var trilhas = $firebaseArray(db.child('trilhas').orderByChild('timestamp'));
+        var sync = $firebaseArray(db.child('palestras').orderByChild('hora'));
 
         var _return = {
+            getTrilhas:     _getTrilhas,
+            getTrilha :     _getTrilha,
             getPalestras:   _getPalestras,
             getPalestra:    _getPalestra,
             getComentarios: _getComentarios,
@@ -73,12 +76,41 @@
         /**
          * Retorna a lista de palestras vinda do firebase
          * @memberof fireService
-         * @function _loading
+         * @function _getPalestras
          * @returns {Array}         Lista de palestras
          * @private
          */
         function _getPalestras () {
             return sync;
+        }
+
+        /**
+         * Retorna a lista de trilhas vinda do firebase
+         * @memberof fireService
+         * @function _getTrilhas
+         * @returns {Array}         Lista de palestras
+         * @private
+         */
+        function _getTrilhas () {
+            return trilhas;
+        }
+
+        /**
+         * Retorna uma trilha passando-se o $id
+         * @memberof fireService
+         * @function _getTrilha
+         * @param {String} _id
+         * @returns {Object}
+         */
+        function _getTrilha (_id) {
+            var result = false;
+
+            trilhas.forEach(function (_t) {
+                if (_t.$id == _id)
+                    result = _t;
+            });
+
+            return result;
         }
 
         /**
