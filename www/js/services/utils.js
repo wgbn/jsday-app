@@ -65,14 +65,7 @@
          */
         function _parseDateToStr (_date, _time){
             _time = _time || false;
-            var result = new Date(_date);
-            return (result.getDate() < 10 ? "0"+result.getDate() : result.getDate())
-                +"/"
-                +(result.getMonth()+1 < 10 ? "0"+(result.getMonth()+1) : result.getMonth()+1)
-                +"/"+result.getFullYear().toString()
-                +(_time ? " "+result.getHours().toString()
-                +":"
-                +result.getMinutes().toString() : "");
+            return moment(_date).format(_time ? 'DD/MM/YYYY HH:mm' : 'DD/MM/YYYY');
         }
 
         /**
@@ -85,9 +78,7 @@
          */
         function _parseTimeToStr (_date) {
             var result = new Date(_date);
-            return (result.getHours() < 10 ? '0' + result.getHours() : result.getHours())
-                +":"
-                +(result.getMinutes() < 10 ? '0' + result.getMinutes() : result.getMinutes());
+            return moment(_date).format('HH:mm');
         }
 
         /**
@@ -100,9 +91,7 @@
          */
         function _parseShortDateToStr (_date){
             var result = new Date(_date);
-            return (result.getDate() < 10 ? "0"+result.getDate() : result.getDate())
-                +"/"
-                +(result.getMonth()+1 < 10 ? "0"+(result.getMonth()+1) : result.getMonth()+1);
+            return moment(_date).format('DD/MM');
         }
 
         /**

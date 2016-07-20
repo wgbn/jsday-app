@@ -90,7 +90,7 @@
          * @returns {String} hora
          */
         function _getHora (_timestamp) {
-            return moment(_timestamp).format('HH:mm');
+            return Utils.parseTimeToStr(_timestamp);
         }
 
         /**

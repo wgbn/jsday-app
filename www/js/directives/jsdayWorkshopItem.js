@@ -40,14 +40,14 @@
         return directive;
     }
 
-    ctrlWorkshopItem.$inject = ['$scope'];
+    ctrlWorkshopItem.$inject = ['$scope', 'Utils'];
 
     /**
      * Lógica da diretiva jsdayWorkshopItem
      * @memberof jsdayWorkshopItem
      * @param {service} $scope  Escopo do controller
      */
-    function ctrlWorkshopItem ($scope) {
+    function ctrlWorkshopItem ($scope, Utils) {
         // bindings
 
         // ações
@@ -75,7 +75,7 @@
          * @returns {String}
          */
         function _getHora (_timestamp) {
-            return moment(_timestamp).format('HH:mm');
+            return Utils.parseTimeToStr(_timestamp);
         }
     }
 
