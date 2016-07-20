@@ -10012,8 +10012,6 @@ directive: jsday-timeline
         .jsday-timeline .timeline .palestra .card-servico .servico .texto {
           background-color: #4CAF50;
           padding: .5em 1em;
-          color: #fff;
-          font-size: 1.3em;
           -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
           -khtml-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
           -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -10026,6 +10024,14 @@ directive: jsday-timeline
           -ms-border-radius: 2px;
           -o-border-radius: 2px;
           border-radius: 2px; }
+          .jsday-timeline .timeline .palestra .card-servico .servico .texto img {
+            width: 20px;
+            height: 20px;
+            margin-right: .6em; }
+          .jsday-timeline .timeline .palestra .card-servico .servico .texto span {
+            color: #fff;
+            font-size: 1.3em;
+            line-height: normal; }
         .jsday-timeline .timeline .palestra .card-servico .servico .ponta {
           z-index: 10;
           background-color: #4CAF50;
@@ -10334,7 +10340,7 @@ directive: jsday-workshop-item
   -moz-align-items: center;
   align-items: center; }
 
-.jsday-palestras .palestra-header, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto, .jsday-workshop-item .autor, .jsday-workshop-item .autor .autor-item, .jsday-workshop-item .hora, .menubar .lista-menu li a, .autor .linha, .autor .redes, .autor-v2, .autor-v2 .dados, .autor-v2 .dados .redes {
+.jsday-palestras .palestra-header, .jsday-timeline .timeline .palestra .card-servico .servico .texto, .jsday-timeline .timeline .palestra .card-palestra .box .caixa .texto, .jsday-workshop-item .autor, .jsday-workshop-item .autor .autor-item, .jsday-workshop-item .hora, .menubar .lista-menu li a, .autor .linha, .autor .redes, .autor-v2, .autor-v2 .dados, .autor-v2 .dados .redes {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -10605,3 +10611,11 @@ directive: jsday-workshop-item
   background-color: #ef473a !important;
   color: #fff !important;
   width: 100%; }
+
+.titulo-workshop {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 1em 0; }
