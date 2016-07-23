@@ -15,6 +15,14 @@ directive: jsday-workshop-item
         height: 160px;
     }
 
+    .work-nome {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        padding: .4em .4em 0;
+    }
+
     .autor {
         @extend %flex-center-left;
         //@include flex-direction(column);

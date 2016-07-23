@@ -10278,6 +10278,12 @@ directive: jsday-workshop-item
   .jsday-workshop-item .capa {
     width: 100%;
     height: 160px; }
+  .jsday-workshop-item .work-nome {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    padding: .4em .4em 0; }
   .jsday-workshop-item .autor {
     padding: .5em;
     border-bottom: 1px solid #e0e0e0; }
